@@ -1,4 +1,4 @@
-# Job-In-Job
+# Job In Job
 
 ## Sejam bem vindos ao repositório do projeto Job In Job, um projeto de extensão de estudantes da UniFil.
 <br>
@@ -9,7 +9,6 @@ Sendo realizado pela seguinte equipe:<br>
 [Leandro Russo](https://github.com/LeandroDeFRusso) <br>
 [Rawanny Canela](https://github.com/RawannyCanela) <br>
 [Victor Hugo Palermo](https://github.com/VictorPalermo) <br>
-
 
 ### Abaixo, segue o link do site
 
