@@ -3,7 +3,7 @@
 ## Sejam todos bem vindos e vindas ao repositório do projeto Job In Job, um projeto de extensão de alunos da Universidade UniFil.
 <br>
 
-Projeto o qual será desenvolvido pela seguinte equipe:<br>
+O Projeto será desenvolvido pela seguinte equipe:<br>
 <br>
 [Jamilly Hamid](https://github.com/JamillyHamid) <br>
 [João Pedro](https://github.com/joaop-s)  <br>
