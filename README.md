@@ -16,11 +16,9 @@ O Projeto será desenvolvido pela seguinte equipe:<br>
 
 [Job in Job](https://thejobinjob.wixstudio.io/jobinjob)
 
-<br>
-
  ## Assista ao Pitch do Projeto Job In Job para uma visão geral da ideia e do desenvolvimento do projeto.
  <br>
- 
+
 [![Assista ao vídeo](https://img.youtube.com/vi/chRIrJL4rgw/maxresdefault.jpg)](https://youtu.be/chRIrJL4rgw)
 
 ### Clique na imagem acima para assistir.
