@@ -18,7 +18,7 @@ public class FormacaoService {
         return formacaoRepository.findAll();
     }
 
-    public Formacao adicionFormacao(Formacao formacao){
+    public Formacao adicionarFormacao(Formacao formacao){
         return formacaoRepository.save(formacao);
     }
 

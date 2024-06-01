@@ -14,11 +14,11 @@ public class FavoritosService {
     @Autowired
     FavoritosRepository favoritosRepository;
 
-    public List<Favoritos> listaFavoritos(){
+    public List<Favoritos> listarFavoritos(){
         return favoritosRepository.findAll();
     }
 
-    public Favoritos adicionFavoritos(Favoritos favoritos){
+    public Favoritos adicionarFavoritos(Favoritos favoritos){
         return favoritosRepository.save(favoritos);
     }
 
