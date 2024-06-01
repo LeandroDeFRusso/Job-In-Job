@@ -1,9 +1,12 @@
 package com.jobinjob.demo.model;
 
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 
 public class Favoritos {
-    
+
+    @Id
+    private Long id;
     @NotNull
     private Empresa empresa = new Empresa();
     @NotNull
@@ -12,9 +15,20 @@ public class Favoritos {
     public Favoritos() {
     }
 
-    public Favoritos(@NotNull Empresa empresa, @NotNull Curriculo curriculo) {
+
+    public Favoritos(Long id, @NotNull Empresa empresa, @NotNull Curriculo curriculo) {
+        this.id = id;
         this.empresa = empresa;
         this.curriculo = curriculo;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Empresa getEmpresa() {
@@ -33,5 +47,4 @@ public class Favoritos {
         this.curriculo = curriculo;
     }
 
-    
 }
