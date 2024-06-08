@@ -1,10 +1,14 @@
 package com.jobinjob.demo.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class Candidato {
+
 
     @Id
     @Size(min=11, max=14)
@@ -16,14 +20,15 @@ public class Candidato {
     @NotNull
     private String email;
     @NotNull
-    private String senha;
+    @Autowired
+    private PasswordEncoder senha;
     private String genero;
     
     public Candidato() {
     }
 
     public Candidato(@Size(min = 11, max = 14) String cpf, @NotNull String nome, @NotNull int idade,
-            @NotNull String email, @NotNull String senha, String genero) {
+            @NotNull String email, @NotNull PasswordEncoder senha, String genero) {
         this.cpf = cpf;
         this.nome = nome;
         this.idade = idade;
@@ -64,11 +69,11 @@ public class Candidato {
         this.email = email;
     }
 
-    public String getSenha() {
+    public PasswordEncoder getSenha() {
         return senha;
     }
 
-    public void setSenha(String senha) {
+    public void setSenha(PasswordEncoder senha) {
         this.senha = senha;
     }
 
