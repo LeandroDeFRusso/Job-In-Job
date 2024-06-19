@@ -29,7 +29,7 @@ public class CurriculoService {
         return null;
     }
 
-    public boolean deletrCurriculo(Long id){
+    public boolean deletarCurriculo(Long id){
         if(curriculoRepository.existsById(id)){
             curriculoRepository.deleteById(id);
             return true;

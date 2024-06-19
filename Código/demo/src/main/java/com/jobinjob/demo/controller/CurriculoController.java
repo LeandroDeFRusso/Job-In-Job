@@ -47,7 +47,7 @@ public class CurriculoController {
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deletarCurriculo(@PathVariable Long id) {
-        if(curriculoService.deletrCurriculo(id)) {
+        if(curriculoService.deletarCurriculo(id)) {
             String mensagem = "O id " + id + " foi excluído com sucesso";
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(mensagem);
         }
