@@ -1,0 +1,298 @@
+body {
+    background-color: #1c3659;
+}
+.box {
+    width: 1920px;
+    height: 1080px;
+  }
+  
+  .box .group {
+    position: fixed;
+    width: 1938px;
+    height: 1080px;
+    top: 0;
+    left: 0;
+  }
+  
+  .box .overlap-group {
+    position: relative;
+    width: 1928px;
+    height: 1088px;
+    left: -4px;
+    background-image: url(./img/tela-de-login-rawraw.png);
+    background-size: 100% 100%;
+  }
+  
+  .box .overlap {
+    position: absolute;
+    width: 1226px;
+    height: 1080px;
+    top: 0;
+    left: 698px;
+    background-color: #e3e6e9;
+    border-radius: 30px;
+  }
+  
+  .box .rectangle {
+    position: absolute;
+    width: 595px;
+    height: 1033px;
+    top: 28px;
+    left: 316px;
+  }
+  
+  .box .div {
+    position: absolute;
+    width: 440px;
+    height: 71px;
+    top: 298px;
+    left: 393px;
+    background-color: #d9d9d9;
+    border-radius: 20px;
+  }
+  
+  .box .text-wrapper {
+    position: absolute;
+    width: 67px;
+    top: 277px;
+    left: 407px;
+    font-family: "Arial-Bold", Helvetica;
+    font-weight: 700;
+    color: #fffffffc;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: -0.41px;
+    line-height: 22px;
+  }
+  
+  .box .rectangle-2 {
+    position: absolute;
+    width: 440px;
+    height: 71px;
+    top: 401px;
+    left: 393px;
+    background-color: #d9d9d9;
+    border-radius: 20px;
+  }
+  
+  .box .rectangle-3 {
+    position: absolute;
+    width: 288px;
+    height: 71px;
+    top: 882px;
+    left: 474px;
+    background-color: #d9d9d9;
+    border-radius: 20px;
+  }
+  
+  .box .text-wrapper-2 {
+    position: absolute;
+    width: 61px;
+    top: 379px;
+    left: 404px;
+    font-family: "Arial-Bold", Helvetica;
+    font-weight: 700;
+    color: #fffffffc;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: -0.41px;
+    line-height: 22px;
+  }
+  
+  .box .text-wrapper-3 {
+    position: absolute;
+    width: 295px;
+    top: 905px;
+    left: 474px;
+    font-family: "Arial-Bold", Helvetica;
+    font-weight: 700;
+    color: #1c3659;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: -0.41px;
+    line-height: 22px;
+  }
+  
+  .box .rectangle-4 {
+    position: absolute;
+    width: 440px;
+    height: 71px;
+    top: 504px;
+    left: 393px;
+    background-color: #d9d9d9;
+    border-radius: 20px;
+  }
+  
+  .box .text-wrapper-4 {
+    position: absolute;
+    width: 61px;
+    top: 483px;
+    left: 411px;
+    font-family: "Arial-Bold", Helvetica;
+    font-weight: 700;
+    color: #fffffffc;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: -0.41px;
+    line-height: 22px;
+  }
+  
+  .box .rectangle-5 {
+    position: absolute;
+    width: 440px;
+    height: 71px;
+    top: 703px;
+    left: 393px;
+    background-color: #d9d9d9;
+    border-radius: 20px;
+  }
+  
+  .box .text-wrapper-5 {
+    position: absolute;
+    width: 160px;
+    top: 681px;
+    left: 409px;
+    font-family: "Arial-Bold", Helvetica;
+    font-weight: 700;
+    color: #fffffffc;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: -0.41px;
+    line-height: 22px;
+  }
+  
+  .box .rectangle-6 {
+    position: absolute;
+    width: 440px;
+    height: 71px;
+    top: 601px;
+    left: 393px;
+    background-color: #d9d9d9;
+    border-radius: 20px;
+  }
+  
+  .box .text-wrapper-6 {
+    position: absolute;
+    width: 61px;
+    top: 580px;
+    left: 413px;
+    font-family: "Arial-Bold", Helvetica;
+    font-weight: 700;
+    color: #fffffffc;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: -0.41px;
+    line-height: 22px;
+  }
+  
+  .box .text-wrapper-7 {
+    position: absolute;
+    width: 295px;
+    top: 135px;
+    left: 457px;
+    font-family: "Arial-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 50px;
+    text-align: center;
+    letter-spacing: -0.41px;
+    line-height: 22px;
+  }
+  
+  .box .icon-lock {
+    top: 612px;
+    left: 409px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .box .img {
+    top: 714px;
+    left: 411px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .box .icon-email {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 515px;
+    left: 409px;
+  }
+  
+  .box .icon-name-profile {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 309px;
+    left: 409px;
+  }
+  
+  .box .group-2 {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    top: 4px;
+    left: 4px;
+    background-image: url(./img/shape.svg);
+    background-size: 100% 100%;
+  }
+  
+  .box .card-profile-ID {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 412px;
+    left: 407px;
+  }
+  
+  .box .azul {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 95px;
+    left: 95px;
+    object-fit: cover;
+  }
+  
+  .box .text-wrapper-8 {
+    position: absolute;
+    top: 635px;
+    left: 107px;
+    font-family: "Arial-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 50px;
+    text-align: center;
+    letter-spacing: -0.41px;
+    line-height: 22px;
+    white-space: nowrap;
+  }
+  
+  .box .div-wrapper {
+    position: absolute;
+    width: 340px;
+    height: 82px;
+    top: 790px;
+    left: 175px;
+    background-color: #e3e6e9;
+    border-radius: 30px;
+  }
+  
+  .box .text-wrapper-9 {
+    position: absolute;
+    width: 295px;
+    top: 30px;
+    left: 23px;
+    font-family: "Arial-Bold", Helvetica;
+    font-weight: 700;
+    color: #1c3659;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: -0.41px;
+    line-height: 22px;
+  }
+  
