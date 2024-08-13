@@ -5,6 +5,7 @@ import java.sql.Date;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 
+@Entity
 public class Experiencias {
 
     @Id
