@@ -3,6 +3,7 @@ package com.jobinjob.demo.model;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 
+@Entity
 public class Favoritos {
 
     @Id
