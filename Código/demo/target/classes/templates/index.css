@@ -1,0 +1,817 @@
+.visualizar-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 5400px;
+  }
+  .montarcurriculo-child {
+    position: absolute;
+    top: 167px;
+    left: 57px;
+    border-radius: 12px;
+    width: 1820px;
+    height: 5179px;
+  }
+  .montarcurriculo-inner,
+  .montarcurriculo-item,
+  .rectangle-icon {
+    position: absolute;
+    top: 798px;
+    left: 99px;
+    border-radius: var(--br-lg);
+    width: 1747px;
+    height: 481px;
+  }
+  .montarcurriculo-inner,
+  .rectangle-icon {
+    top: 2909px;
+    height: 1064px;
+  }
+  .rectangle-icon {
+    top: 4106px;
+    height: 858px;
+  }
+  .data-de-formao,
+  .data-de-incio {
+    position: absolute;
+    top: 3290px;
+    left: 129px;
+    font-size: var(--font-size-21xl);
+    font-weight: 600;
+    display: inline-block;
+    width: 317px;
+    height: 74.7px;
+  }
+  .data-de-formao {
+    top: 3293px;
+    left: 703px;
+    width: 484px;
+    height: 75px;
+  }
+  .cursando1 {
+    margin: 0;
+  }
+  .cursando {
+    position: absolute;
+    top: 3464px;
+    left: 766px;
+    font-weight: 600;
+    display: inline-block;
+    width: 207px;
+    height: 44px;
+  }
+  .rectangle-div {
+    position: absolute;
+    top: 1388.5px;
+    left: 97.5px;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.43);
+    border-radius: var(--br-lg);
+    background-color: var(--color-gainsboro-100);
+    border: 3px solid var(--color-darkgray);
+    box-sizing: border-box;
+    width: 1750px;
+    height: 1399px;
+  }
+  .montarcurriculo-child1,
+  .montarcurriculo-child2 {
+    position: absolute;
+    top: 2283px;
+    left: 129px;
+    border-radius: var(--br-lg);
+    width: 1617px;
+    height: 464px;
+  }
+  .montarcurriculo-child2 {
+    top: 3554px;
+    height: 374px;
+  }
+  .descrio {
+    top: 2317px;
+    left: 159px;
+    color: var(--color-gray);
+    width: 1557px;
+    height: 387px;
+  }
+  .cargo,
+  .data-de-incio1,
+  .descrio,
+  .descrio1 {
+    position: absolute;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .descrio1 {
+    top: 3573px;
+    left: 159px;
+    color: var(--color-gray);
+    width: 1557px;
+    height: 319px;
+  }
+  .cargo,
+  .data-de-incio1 {
+    top: 1666.33px;
+    left: 129px;
+    font-size: var(--font-size-29xl);
+    width: 245px;
+    height: 176px;
+  }
+  .data-de-incio1 {
+    top: 1886.33px;
+    font-size: var(--font-size-21xl);
+    width: 317px;
+    height: 74.7px;
+  }
+  .descrio-das-atividades {
+    top: 2207px;
+    left: 129px;
+    font-size: var(--font-size-29xl);
+    width: 1227px;
+    height: 75px;
+  }
+  .data-de-encerramento,
+  .descrio-das-atividades,
+  .emprego-atual {
+    position: absolute;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .data-de-encerramento {
+    top: 1886px;
+    left: 701px;
+    font-size: var(--font-size-21xl);
+    width: 556px;
+    height: 75px;
+  }
+  .emprego-atual {
+    top: 2105px;
+    left: 751px;
+    width: 317px;
+    height: 74.7px;
+  }
+  .montarcurriculo-child10,
+  .montarcurriculo-child3,
+  .montarcurriculo-child4,
+  .montarcurriculo-child5,
+  .montarcurriculo-child6,
+  .montarcurriculo-child7,
+  .montarcurriculo-child8,
+  .montarcurriculo-child9 {
+    position: absolute;
+    top: 1520.83px;
+    left: 127.5px;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.43);
+    border-radius: var(--br-lg);
+    background-color: var(--color-gainsboro-100);
+    border: 3px solid var(--color-darkgray);
+    box-sizing: border-box;
+    width: 1634px;
+    height: 119px;
+  }
+  .montarcurriculo-child10,
+  .montarcurriculo-child4,
+  .montarcurriculo-child5,
+  .montarcurriculo-child6,
+  .montarcurriculo-child7,
+  .montarcurriculo-child8,
+  .montarcurriculo-child9 {
+    top: 256.5px;
+    left: 97.5px;
+    width: 756px;
+    height: 93px;
+  }
+  .montarcurriculo-child10,
+  .montarcurriculo-child5,
+  .montarcurriculo-child6,
+  .montarcurriculo-child7,
+  .montarcurriculo-child8,
+  .montarcurriculo-child9 {
+    top: 428.5px;
+  }
+  .montarcurriculo-child10,
+  .montarcurriculo-child6,
+  .montarcurriculo-child7,
+  .montarcurriculo-child8,
+  .montarcurriculo-child9 {
+    top: 600.5px;
+    width: 481px;
+  }
+  .montarcurriculo-child10,
+  .montarcurriculo-child7,
+  .montarcurriculo-child8,
+  .montarcurriculo-child9 {
+    left: 594.5px;
+    width: 259px;
+  }
+  .montarcurriculo-child10,
+  .montarcurriculo-child8,
+  .montarcurriculo-child9 {
+    top: 428.5px;
+    left: 970.5px;
+    width: 756px;
+  }
+  .montarcurriculo-child10,
+  .montarcurriculo-child9 {
+    top: 602.5px;
+  }
+  .montarcurriculo-child10 {
+    top: 256.5px;
+  }
+  .montarcurriculo-child11,
+  .montarcurriculo-child12,
+  .montarcurriculo-child13 {
+    position: absolute;
+    top: 1741.67px;
+    left: 129px;
+    border-radius: var(--br-lg);
+    width: 1631px;
+    height: 116px;
+  }
+  .montarcurriculo-child12,
+  .montarcurriculo-child13 {
+    top: 1961px;
+    width: 486px;
+  }
+  .montarcurriculo-child13 {
+    left: 701px;
+  }
+  .montarcurriculo-child14 {
+    position: absolute;
+    top: 2109px;
+    left: 706px;
+    border-radius: var(--br-5xs);
+    width: 33px;
+    height: 31px;
+  }
+  .descrio2 {
+    position: absolute;
+    top: 712px;
+    left: 129px;
+    font-size: var(--font-size-39xl);
+    font-weight: 600;
+    display: inline-block;
+    width: 340px;
+    height: 60px;
+  }
+  .cidade,
+  .data-de-nascimento,
+  .e-mail,
+  .estado-civil,
+  .estado-uf,
+  .nome-completo {
+    position: absolute;
+    top: 198px;
+    left: 99px;
+    font-weight: 600;
+    display: inline-block;
+    width: 348px;
+    height: 60px;
+  }
+  .cidade,
+  .data-de-nascimento,
+  .e-mail,
+  .estado-civil,
+  .estado-uf {
+    left: 972px;
+    width: 405px;
+  }
+  .cidade,
+  .e-mail,
+  .estado-civil,
+  .estado-uf {
+    top: 368px;
+    left: 99px;
+    width: 130px;
+  }
+  .cidade,
+  .estado-civil,
+  .estado-uf {
+    top: 542px;
+    width: 163px;
+  }
+  .estado-civil,
+  .estado-uf {
+    left: 596px;
+    width: 237px;
+  }
+  .estado-civil {
+    left: 973px;
+    width: 232px;
+  }
+  .nmero-de-telefone {
+    top: 368px;
+    left: 972px;
+    width: 405px;
+    height: 60px;
+  }
+  .empresa,
+  .experincias,
+  .monte-seu-currculo,
+  .nmero-de-telefone {
+    position: absolute;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .monte-seu-currculo {
+    top: 39px;
+    left: 57px;
+    font-size: 96px;
+    color: #d9d9d9;
+    width: 1504px;
+    height: 90px;
+  }
+  .empresa,
+  .experincias {
+    top: 1302px;
+    left: 131px;
+    font-size: var(--font-size-39xl);
+    width: 443px;
+    height: 71px;
+  }
+  .empresa {
+    top: 1434px;
+    left: 129px;
+    font-size: var(--font-size-29xl);
+    width: 245px;
+    height: 58px;
+  }
+  .formao,
+  .instituio {
+    left: 129px;
+    font-size: var(--font-size-21xl);
+  }
+  .instituio {
+    position: absolute;
+    top: 2933px;
+    font-weight: 600;
+    display: inline-block;
+    width: 222px;
+  }
+  .formao {
+    top: 3111px;
+    width: 257px;
+  }
+  .cargo1,
+  .formao,
+  .formao1,
+  .nome-da-empresa {
+    position: absolute;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .formao1 {
+    top: 3485px;
+    left: 131px;
+    font-size: var(--font-size-29xl);
+    width: 834px;
+  }
+  .cargo1,
+  .nome-da-empresa {
+    top: 1557px;
+    left: 152px;
+    color: var(--color-gray);
+    width: 1617px;
+    height: 94px;
+  }
+  .cargo1 {
+    top: 1774px;
+    left: 158px;
+  }
+  .montarcurriculo-child15,
+  .montarcurriculo-child16 {
+    position: absolute;
+    top: 3347.5px;
+    left: 129.5px;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.43);
+    border-radius: var(--br-lg);
+    background-color: var(--color-gainsboro-100);
+    border: 3px solid var(--color-darkgray);
+    box-sizing: border-box;
+    width: 446px;
+    height: 100px;
+  }
+  .montarcurriculo-child16 {
+    left: 701.5px;
+  }
+  .div,
+  .div1,
+  .div2,
+  .div3 {
+    position: absolute;
+    top: 1997px;
+    left: 152px;
+    font-weight: 600;
+    color: var(--color-gray);
+    display: inline-block;
+    width: 422px;
+    height: 94px;
+  }
+  .div1,
+  .div2,
+  .div3 {
+    left: 739px;
+  }
+  .div2,
+  .div3 {
+    top: 3374px;
+    left: 152px;
+    width: 234px;
+    height: 72px;
+  }
+  .div3 {
+    left: 726px;
+    width: 247px;
+  }
+  .montarcurriculo-child17 {
+    position: absolute;
+    top: 3470px;
+    left: 716px;
+    border-radius: var(--br-5xs);
+    width: 33px;
+    height: 31px;
+  }
+  .montarcurriculo-child18,
+  .montarcurriculo-child19 {
+    position: absolute;
+    top: 2991.5px;
+    left: 129.5px;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.43);
+    border-radius: var(--br-lg);
+    background-color: var(--color-gainsboro-100);
+    border: 3px solid var(--color-darkgray);
+    box-sizing: border-box;
+    width: 1634px;
+    height: 100px;
+  }
+  .montarcurriculo-child19 {
+    top: 3169.5px;
+  }
+  .nome-da-instituo {
+    top: 3017px;
+    left: 164px;
+    color: var(--color-gray);
+    width: 1552px;
+    height: 94px;
+  }
+  .curso,
+  .formao-acadmica,
+  .nome-da-instituo {
+    position: absolute;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .formao-acadmica {
+    top: 2814px;
+    left: 129px;
+    font-size: var(--font-size-39xl);
+    width: 668px;
+    height: 49px;
+  }
+  .curso {
+    top: 3193px;
+    left: 164px;
+    color: var(--color-gray);
+    width: 1617px;
+    height: 44px;
+  }
+  .montarcurriculo-child20 {
+    position: absolute;
+    top: 5074px;
+    left: 99px;
+    border-radius: var(--br-lg);
+    width: 1747px;
+    height: 239px;
+  }
+  .cursando2,
+  .data-de-formao1,
+  .data-de-incio2 {
+    position: absolute;
+    top: 4324px;
+    left: 129px;
+    font-weight: 600;
+    display: inline-block;
+    width: 317px;
+    height: 74.7px;
+  }
+  .cursando2,
+  .data-de-formao1 {
+    top: 4327px;
+    left: 505px;
+    width: 406px;
+    height: 75px;
+  }
+  .cursando2 {
+    top: 4502px;
+    left: 562px;
+    width: 223px;
+    height: 58px;
+  }
+  .montarcurriculo-child21 {
+    position: absolute;
+    top: 4651px;
+    left: 129px;
+    border-radius: var(--br-lg);
+    width: 1617px;
+    height: 274px;
+  }
+  .descrio3 {
+    position: absolute;
+    top: 4669px;
+    left: 159px;
+    font-weight: 600;
+    color: var(--color-gray);
+    display: inline-block;
+    width: 1557px;
+    height: 218px;
+  }
+  .formao2 {
+    top: 4130px;
+    left: 938px;
+    width: 834px;
+  }
+  .descrio-breve-das,
+  .formao2,
+  .lingua-materna {
+    position: absolute;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .descrio-breve-das {
+    top: 4583px;
+    left: 129px;
+    font-size: var(--font-size-21xl);
+    width: 975px;
+  }
+  .lingua-materna {
+    top: 5107px;
+    left: 143px;
+    width: 303px;
+  }
+  .montarcurriculo-child22,
+  .montarcurriculo-child23 {
+    position: absolute;
+    top: 4381.5px;
+    left: 129.5px;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.43);
+    border-radius: var(--br-lg);
+    background-color: var(--color-gainsboro-100);
+    border: 3px solid var(--color-darkgray);
+    box-sizing: border-box;
+    width: 318px;
+    height: 100px;
+  }
+  .montarcurriculo-child23 {
+    left: 503.5px;
+  }
+  .div4 {
+    top: 4408px;
+    left: 152px;
+    color: var(--color-gray);
+    width: 254px;
+    height: 72px;
+  }
+  .div4,
+  .div5,
+  .instituio1 {
+    position: absolute;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .div5 {
+    top: 4408px;
+    left: 522px;
+    color: var(--color-gray);
+    width: 263px;
+    height: 72px;
+  }
+  .instituio1 {
+    top: 660px;
+    left: 0;
+    width: 222px;
+  }
+  .boto-cursando-ativo-child {
+    position: absolute;
+    top: 0;
+    left: 587px;
+    border-radius: var(--br-5xs);
+    width: 33px;
+    height: 31px;
+  }
+  .vector-icon {
+    position: absolute;
+    height: 2.2%;
+    width: 3.53%;
+    top: 1.1%;
+    right: 0.87%;
+    bottom: 96.7%;
+    left: 95.6%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .boto-cursando-ativo {
+    position: absolute;
+    top: 3470px;
+    left: 129px;
+    width: 620px;
+    height: 704px;
+  }
+  .montarcurriculo-child24,
+  .montarcurriculo-child25 {
+    position: absolute;
+    top: 4188.5px;
+    left: 129.5px;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.43);
+    border-radius: var(--br-lg);
+    background-color: var(--color-gainsboro-100);
+    border: 3px solid var(--color-darkgray);
+    box-sizing: border-box;
+    width: 751px;
+    height: 100px;
+  }
+  .montarcurriculo-child25 {
+    top: 5165.5px;
+    left: 127.5px;
+    width: 351px;
+  }
+  .lngua-estrangeira,
+  .nvel-de-proeficincia {
+    position: absolute;
+    top: 5107px;
+    left: 562px;
+    font-weight: 600;
+    display: inline-block;
+    width: 378px;
+  }
+  .nvel-de-proeficincia {
+    left: 1017px;
+    width: 442px;
+  }
+  .montarcurriculo-child26,
+  .montarcurriculo-child27,
+  .montarcurriculo-child28 {
+    position: absolute;
+    top: 5164.5px;
+    left: 560.5px;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.43);
+    border-radius: var(--br-lg);
+    background-color: var(--color-gainsboro-100);
+    border: 3px solid var(--color-darkgray);
+    box-sizing: border-box;
+    width: 422px;
+    height: 100px;
+  }
+  .montarcurriculo-child27,
+  .montarcurriculo-child28 {
+    left: 1009.5px;
+    width: 806px;
+  }
+  .montarcurriculo-child28 {
+    top: 4188.5px;
+    left: 938.5px;
+    width: 751px;
+  }
+  .montarcurriculo-child29 {
+    position: absolute;
+    top: 4506px;
+    left: 512px;
+    border-radius: var(--br-5xs);
+    width: 33px;
+    height: 31px;
+  }
+  .ex-bsico-intermedirio,
+  .ingls,
+  .nome-da-instituo1,
+  .portugus {
+    position: absolute;
+    top: 4214px;
+    left: 164px;
+    font-weight: 600;
+    color: var(--color-gray);
+    display: inline-block;
+    width: 683px;
+    height: 94px;
+  }
+  .ex-bsico-intermedirio,
+  .ingls,
+  .portugus {
+    top: 5190px;
+    left: 143px;
+    width: 263px;
+    height: 72px;
+  }
+  .ex-bsico-intermedirio,
+  .ingls {
+    top: 5191px;
+    left: 580px;
+    width: 179px;
+  }
+  .ex-bsico-intermedirio {
+    left: 1042px;
+    font-size: 32px;
+    width: 772px;
+  }
+  .cursos {
+    top: 4024px;
+    left: 129px;
+    font-size: var(--font-size-39xl);
+    width: 257px;
+    height: 49px;
+  }
+  .curso1,
+  .cursos,
+  .idiomas {
+    position: absolute;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .idiomas {
+    top: 4987px;
+    left: 109px;
+    font-size: var(--font-size-39xl);
+    width: 864px;
+    height: 49px;
+  }
+  .curso1 {
+    top: 4212px;
+    left: 973px;
+    color: var(--color-gray);
+    width: 687px;
+    height: 44px;
+  }
+  .casado,
+  .descreva-seus-objetivos,
+  .div6,
+  .emailhotmailcom,
+  .joo-da-silva,
+  .so-paulo,
+  .sp,
+  .xx-xxxxx-xxxx {
+    position: absolute;
+    top: 813px;
+    left: 143px;
+    font-weight: 600;
+    color: var(--color-gray);
+    display: inline-block;
+    width: 1617px;
+    height: 437px;
+  }
+  .casado,
+  .div6,
+  .emailhotmailcom,
+  .joo-da-silva,
+  .so-paulo,
+  .sp,
+  .xx-xxxxx-xxxx {
+    top: 455px;
+    left: 129px;
+    width: 723px;
+    height: 63px;
+  }
+  .casado,
+  .div6,
+  .joo-da-silva,
+  .so-paulo,
+  .sp,
+  .xx-xxxxx-xxxx {
+    top: 281px;
+  }
+  .casado,
+  .div6,
+  .so-paulo,
+  .sp,
+  .xx-xxxxx-xxxx {
+    top: 623px;
+    width: 427px;
+  }
+  .casado,
+  .div6,
+  .sp,
+  .xx-xxxxx-xxxx {
+    top: 620px;
+    left: 624px;
+    width: 195px;
+  }
+  .casado,
+  .div6,
+  .xx-xxxxx-xxxx {
+    top: 285px;
+    left: 1002px;
+    width: 723px;
+  }
+  .casado,
+  .xx-xxxxx-xxxx {
+    top: 452px;
+  }
+  .casado {
+    top: 627px;
+  }
+  .montarcurriculo {
+    width: 100%;
+    position: relative;
+    height: 5400px;
+    text-align: left;
+    font-size: var(--font-size-17xl);
+    color: var(--color-darkslategray);
+    font-family: var(--font-montserrat);
+  }
