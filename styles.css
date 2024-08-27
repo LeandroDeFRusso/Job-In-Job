@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #E5E5E5;
+}
+
+/* Cabeçalho */
+header {
+    background: #1C3659;
+    color: #e5e5e5;
+    padding: 1rem;
+}
+
+
+
+header h1 {
+    margin-bottom: 0.5rem;
+    color: #e5e5e5;
+}
+
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    
+}
+
+nav ul li a {
+    color: #3498db; 
+    text-decoration: none; 
+}
+
+/* Cor do link quando o mouse passa por cima */
+nav ul li a:hover {
+    color: #868686;
+}
+
+
+nav ul li a.active {
+    color: #e74c3c; /* Cor do link ativo */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Seções principais */
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+label{
+    color: #E5E5E5;
+}
+
+
+h2 {
+    margin-bottom: 1rem;
+    color: #1C3659;
+}
+
+p{
+    color: #fff;
+}
+
+/* Rodapé */
+footer {
+    background: #1C3659;
+    color: #e5e5e5;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+h3{
+    font-size: x-large;
+    color: #e5e5e5;
+}
+
+hr {
+    border: none; /* Remove as bordas padrão */
+    border-top: 2px solid #3179d6; /* Define a cor e a espessura da linha */
+    margin: 20px 0; /* Ajusta o espaçamento acima e abaixo do <hr> */
+}
+
+#inicio{
+    color: #1C3659;
+    font-weight: bold;
+}
+
+
+.form-container {
+    background-color: #1C3659;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    color: #E5E5E5;
+}
+
+.form-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container input[type="date"],
+.form-container select,
+.form-container textarea {
+    background-color: #e5e5e5;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-container input[type="submit"] {
+    display: block;
+    margin: 20px auto;
+    background-color: #FFf;
+    color: #1C3659;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+.form-container input[type="submit"]:hover {
+    background-color: #555;
+
+}
+
+#add-experience {
+    display: block;
+    margin: 20px auto; /* Centraliza o botão */
+    background-color: #FFf;
+    color: #1C3659;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#add-experience:hover {
+    background-color: #555;
+}
+
+
+#add-education {
+    display: block;
+    margin: 20px auto; /* Centraliza o botão */
+    background-color: #FFF;
+    color: #1C3659;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#add-education:hover {
+    background-color: #555;
+}
+
+#add-course {
+    display: block;
+    margin: 20px auto; /* Centraliza o botão */
+    background-color: #FFF;
+    color: #1C3659;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#add-course:hover {
+    background-color: #555;
+}
+
+#add-language {
+    display: block;
+    margin: 20px auto; /* Centraliza o botão */
+    background-color: #fff;
+    color: #1C3659;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#add-language:hover {
+    background-color: #555;
+}
