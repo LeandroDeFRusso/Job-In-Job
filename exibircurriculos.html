@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibir Currículos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>JobInJob</h1>
+        <nav>
+            <ul>
+                <li id="inicio"><a href="index.html">Início</a></li>
+                <li><a href="curriculo.html">Monte seu Currículo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 id="curriculostitle">Currículos</h2>
+
+        <!-- Dropdown para seleção de categoria -->
+        <label for="categoria">Selecione uma categoria:</label>
+        <select id="categoria" onchange="atualizarDropdownArea()">
+            <option value="geral">Geral</option>
+            <option value="area">Por Área</option>
+            <option value="menor-aprendiz">Menor Aprendiz</option>
+        </select>
+
+        <!-- Dropdown para seleção da área, visível apenas quando "Por Área" é selecionado -->
+        <label for="area" id="labelArea" style="display:none;">Selecione uma área:</label>
+        <select id="area" onchange="filtrarCurriculos()" style="display:none;">
+            <option value="todas">Todas</option>
+            <option value="Tecnologia">Tecnologia</option>
+            <option value="Saúde">Saúde</option>
+            <option value="Educação">Educação</option>
+            <!-- Adicione outras áreas conforme necessário -->
+        </select>
+
+        <section id="curriculos-container" class="curriculos-container">
+            <!-- Exemplo de currículos -->
+            <div class="curriculo" data-area="Tecnologia" data-idade="30">
+                <h3>Nome: João Silva</h3>
+                <p>Idade: 30 anos</p>
+                <p>Telefone: (11) 99999-9999</p>
+                <p>Cidade: São Paulo</p>
+                <p>Estado: SP</p>
+                <p>Área: Tecnologia</p>
+                <button onclick="window.location.href='visualizacao.html'">Ver Currículo</button>
+            </div>
+
+            <div class="curriculo" data-area="Saúde" data-idade="25">
+                <h3>Nome: Maria Oliveira</h3>
+                <p>Idade: 25 anos</p>
+                <p>Telefone: (21) 98888-8888</p>
+                <p>Cidade: Rio de Janeiro</p>
+                <p>Estado: RJ</p>
+                <p>Área: Saúde</p>
+            </div>
+
+            <div class="curriculo" data-area="Educação" data-idade="35">
+                <h3>Nome: Carlos Santos</h3>
+                <p>Idade: 35 anos</p>
+                <p>Telefone: (31) 97777-7777</p>
+                <p>Cidade: Belo Horizonte</p>
+                <p>Estado: MG</p>
+                <p>Área: Educação</p>
+            </div>
+
+            <div class="curriculo" data-area="Tecnologia" data-idade="17">
+                <h3>Nome: Pedro Souza</h3>
+                <p>Idade: 17 anos</p>
+                <p>Telefone: (41) 96666-6666</p>
+                <p>Cidade: Curitiba</p>
+                <p>Estado: PR</p>
+                <p>Área: Tecnologia</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function atualizarDropdownArea() {
+            const categoria = document.getElementById('categoria').value;
+            const areaDropdown = document.getElementById('area');
+            const labelArea = document.getElementById('labelArea');
+
+            // Mostrar ou ocultar o dropdown de áreas com base na seleção de categoria
+            if (categoria === 'area') {
+                areaDropdown.style.display = 'block';
+                labelArea.style.display = 'block';
+            } else {
+                areaDropdown.style.display = 'none';
+                labelArea.style.display = 'none';
+                filtrarCurriculos(); // Atualizar os currículos
+            }
+        }
+
+        function filtrarCurriculos() {
+            const categoria = document.getElementById('categoria').value;
+            const curriculos = document.querySelectorAll('.curriculo');
+            const areaSelecionada = document.getElementById('area').value;
+
+            curriculos.forEach(curriculo => {
+                const area = curriculo.getAttribute('data-area');
+                const idade = parseInt(curriculo.getAttribute('data-idade'));
+
+                // Exibir todos os currículos na categoria geral
+                if (categoria === 'geral') {
+                    curriculo.style.display = 'block';
+                }
+
+                // Filtrar currículos por área
+                else if (categoria === 'area') {
+                    if (areaSelecionada === 'todas' || area === areaSelecionada) {
+                        curriculo.style.display = 'block';
+                    } else {
+                        curriculo.style.display = 'none';
+                    }
+                }
+
+                // Filtrar currículos para menor aprendiz (menores de 18 anos)
+                else if (categoria === 'menor-aprendiz') {
+                    if (idade < 18) {
+                        curriculo.style.display = 'block';
+                    } else {
+                        curriculo.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -226,3 +226,93 @@ hr {
 #add-language:hover {
     background-color: #555;
 }
+
+/* Estilos básicos para a página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #1C3659;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    margin: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+/* Estilos para o container dos currículos */
+.curriculos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.curriculo {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.curriculo h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.curriculo p {
+    margin: 5px 0;
+    color: #666;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1C3659;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+#inicio {
+    margin-left: 20px;
+}
+#nomeec{
+    color: #1C3659;
+}
+#curriculostitle{
+    font-weight: bold;
+    color: #1C3659;
+    font-size: 30px;
+}
