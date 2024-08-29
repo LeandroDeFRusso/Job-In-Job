@@ -313,6 +313,130 @@ footer {
 }
 #curriculostitle{
     font-weight: bold;
+    color: #1C3659; 
+    font-size: 32px;
+    
+}
+
+#iniciomargin{
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E5E5E5;
+}
+
+#selecatego{
     color: #1C3659;
-    font-size: 30px;
+    font-weight: bold;
+    font-size: 24px;
+
+}
+
+#categoria{
+    background-color: #1C3659;
+    border-radius: 4px;
+    color: #E5E5E5;
+    font-size: 20px;
+    font-weight: medium;
+    margin-bottom: 24px;
+    width: 210px;
+    height: 36px;
+    margin-left: 12px;
+}
+
+#exibirNome{
+    color: #1C3659;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#botaovisulizar{
+    background-color: #1C3659;
+    border-radius: 4px;
+    color: #E5E5E5;
+    font-size: 18px;
+    font-weight: medium;
+    margin-top: 12px;
+    width: 200px;
+    height: 36px;
+}
+
+#dadosCurriculo{
+    font-weight: medium;
+    font-size: 18px;
+}
+
+#botaotabs{
+    font-size: 20px;
+    font-weight: bold;
+    color: #E5E5E5;
+    
+}
+
+#labelArea{
+    color: #1C3659;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#area{
+    background-color: #fff;
+    border-radius: 4px;
+    color: #1C3659;
+    font-size: 18px;
+    font-weight: medium;
+    margin-top: 12px;
+    width: 270px;
+    height: 36px;
+    margin-bottom: 12px;
+}
+
+#editar{
+    background-color: #e5e5e5;
+    border-radius: 8px;
+    color: #1C3659;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 12px;
+    width: 160px;
+    height: 36px;
+}
+
+#salvar{
+    background-color: #e5e5e5;
+    border-radius: 8px;
+    color: #1C3659;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 12px;
+    width: 160px;
+    height: 36px;
+}
+
+#botaocancelar{
+    background-color: #e5e5e5;
+    border-radius: 8px;
+    color: #1C3659;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 12px;
+    width: 160px;
+    height: 36px;
+}
+
+#meucurriculodesc{
+    color: #1C3659;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#botao-favoritar{
+    background-color: #1C3659;
+    border-radius: 4px;
+    color: #E5E5E5;
+    font-size: 18px;
+    font-weight: medium;
+    margin-top: 12px;
+    width: 200px;
+    height: 36px;
 }

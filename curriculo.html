@@ -132,9 +132,11 @@
         <h1>JobInJob</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="curriculo.html">Monte seu Currículo</a></li>
-                <li><a href="visualizacao.html">Visualizar Curriculo</a></li>
+                <li><a id = "iniciomargin" href="index.html">Login</a></li>
+                <li><a id = "botaotabs" href="curriculo.html">Monte seu Curriculo</a></li>
+                <li><a id = "botaotabs" href="visualizacao.html">Visualizar Curriculo</a></li>
+                <li><a id = "botaotabs" href="exibircurriculos.html">Exibir Curriculos</a></li>
+                <li><a id="botaotabs" href="meu_curriculo.html" class="active">Meu Currículo</a></li>
             </ul>
         </nav>
     </header>
@@ -145,22 +147,22 @@
             <form>
                 <!-- Dados Pessoais e Área -->
                 <label for="nome">Nome Completo:</label>
-                <input type="text" id="nome" name="nome" required>
+                <input type="text" id="nome" name="nome" placeholder="Ex: João da Silva" required>
 
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="Ex: joao.silva@example.com" required>
 
                 <label for="cidade">Cidade:</label>
-                <input type="text" id="cidade" name="cidade" required>
+                <input type="text" id="cidade" name="cidade" placeholder= "Ex: São Paulo" required>
 
                 <label for="estado">Estado:</label>
-                <input type="text" id="estado" name="estado" required>
+                <input type="text" id="estado" name="estado" placeholder= "Ex: São Paulo" required>
 
                 <label for="data-nascimento">Data de Nascimento:</label>
-                <input type="date" id="data-nascimento" name="data-nascimento" required>
+                <input type="date" id="data-nascimento" name="data-nascimento" placeholder= "Ex: 01/02/2000" required>
 
                 <label for="telefone">Número de Telefone:</label>
-                <input type="tel" id="telefone" name="telefone" required>
+                <input type="tel" id="telefone" name="telefone" placeholder= "Ex: (11) 99999-9999" required>
 
                 <label for="genero">Gênero:</label>
                 <select id="genero" name="genero" required>
@@ -170,8 +172,8 @@
                     <option value="outro">Outro</option>
                 </select>
 
-                <label for="descricao">Descrição (máx. 300 caracteres):</label>
-                <textarea id="descricao" name="descricao" rows="4" maxlength="300" required></textarea>
+                <label for="descricao ">Descrição (máx. 300 caracteres):</label>
+                <textarea id="descricao" name="descricao" placeholder= "Preencha a descrição" rows="4" maxlength="300" required></textarea>
                 <hr>
                 <!-- Campo de Área -->
                 <label for="area">Área:</label>
@@ -198,10 +200,10 @@
 
                     <div class="experience-entry">
                         <label for="empresa">Empresa:</label>
-                        <input type="text" id="empresa" name="empresa[]" required>
+                        <input type="text" id="empresa" name="empresa[]" placeholder= "Ex: Job In Job" required>
 
                         <label for="cargo">Cargo:</label>
-                        <input type="text" id="cargo" name="cargo[]" required>
+                        <input type="text" id="cargo" name="cargo[]" placeholder= "Ex: Auxiliar Adminsitrativo" required>
 
                         <label for="data-inicio">Data de Início:</label>
                         <input type="date" id="data-inicio" name="data-inicio[]" required>
@@ -215,7 +217,7 @@
                         </label>
 
                         <label for="descricao-experiencia">Descrição da Experiência (máx. 300 caracteres):</label>
-                        <textarea id="descricao-experiencia" name="descricao-experiencia[]" rows="4" maxlength="300" required></textarea>
+                        <textarea id="descricao-experiencia" name="descricao-experiencia[]" rows="4" maxlength="300" required placeholder= "Preencha a descrição"></textarea>
                         <button id="add-experience" type="button" onclick="adicionarExperiencia()">Adicionar nova Experiência</button>
                         <hr>
                     </div>
@@ -230,10 +232,10 @@
 
                     <div class="education-entry">
                         <label for="instituicao">Instituição:</label>
-                        <input type="text" id="instituicao" name="instituicao[]" required>
+                        <input type="text" id="instituicao" name="instituicao[]" required placeholder= "Ex: Universidade Estadual de São Paulo">
 
                         <label for="curso">Curso:</label>
-                        <input type="text" id="curso" name="curso[]" required>
+                        <input type="text" id="curso" name="curso[]" required placeholder= "Ex: Bachalerado em Engenharia de Software">
 
                         <label for="data-inicio-educacao">Data de Início:</label>
                         <input type="date" id="data-inicio-educacao" name="data-inicio-educacao[]" required>
@@ -242,10 +244,10 @@
                         <input type="date" id="data-formacao" name="data-formacao[]" required>
 
                         <label for="nivel-escolaridade">Nível de Escolaridade:</label>
-                        <input type="text" id="nivel-escolaridade" name="nivel-escolaridade[]" required>
+                        <input type="text" id="nivel-escolaridade" name="nivel-escolaridade[]" required placeholder= "Ex: Ensino Médio Completo">
 
                         <label for="descricao-educacao">Descrição da Educação (máx. 300 caracteres):</label>
-                        <textarea id="descricao-educacao" name="descricao-educacao[]" rows="4" maxlength="300" required></textarea>
+                        <textarea id="descricao-educacao" name="descricao-educacao[]" rows="4" maxlength="300" required placeholder= "Preencha a descrição"></textarea>
                         <button id="add-education" type="button" onclick="adicionarEducacao()">Adicionar nova Educação</button>
                         <hr>
                     </div>
@@ -260,10 +262,10 @@
 
                     <div class="course-entry">
                         <label for="instituicao-curso">Instituição:</label>
-                        <input type="text" id="instituicao-curso" name="instituicao-curso[]" required>
+                        <input type="text" id="instituicao-curso" name="instituicao-curso[]" required placeholder= "Ex: JobInJob English">
 
                         <label for="curso-profissionalizante">Curso (Profissionalizante):</label>
-                        <input type="text" id="curso-profissionalizante" name="curso-profissionalizante[]" required>
+                        <input type="text" id="curso-profissionalizante" name="curso-profissionalizante[]" required placeholder= "Ex: Curso de Inglês">
 
                         <label for="data-inicio-curso">Data de Início:</label>
                         <input type="date" id="data-inicio-curso" name="data-inicio-curso[]" required>
@@ -277,7 +279,7 @@
                         </label>
 
                         <label for="descricao-curso">Descrição das Habilidades Desenvolvidas (máx. 300 caracteres):</label>
-                        <textarea id="descricao-curso" name="descricao-curso[]" rows="4" maxlength="300" required></textarea>
+                        <textarea id="descricao-curso" name="descricao-curso[]" rows="4" maxlength="300" required placeholder= "Preencha a descrição"></textarea>
                         <button id="add-course" type="button" onclick="adicionarCurso()">Adicionar novo Curso</button>
                         <hr>
                     </div>
@@ -288,13 +290,13 @@
 
                     <div class="language-entry">
                         <label for="lingua-materna">Língua Materna:</label>
-                        <input type="text" id="lingua-materna" name="lingua-materna[]" required>
+                        <input type="text" id="lingua-materna" name="lingua-materna[]" required placeholder= "Ex: Português">
 
                         <label for="lingua-estrangeira">Língua Estrangeira:</label>
-                        <input type="text" id="lingua-estrangeira" name="lingua-estrangeira[]" required>
+                        <input type="text" id="lingua-estrangeira" name="lingua-estrangeira[]" required placeholder= "Ex: Inglês">
 
                         <label for="nivel-proficiencia">Nível de Proficiência na Língua Estrangeira:</label>
-                        <input type="text" id="nivel-proficiencia" name="nivel-proficiencia[]" required>
+                        <input type="text" id="nivel-proficiencia" name="nivel-proficiencia[]" required placeholder= "Ex: Básico, Intermediário, Avançado ou Fluente">
 
                      
                     </div>
