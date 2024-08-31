@@ -1,31 +1,81 @@
 package com.jobinjob.demo.model;
 
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
+import java.util.List;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
+
+@Entity
 public class Curriculo {
-    
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
+
+    @OneToOne
+    @JoinColumn(name = "candidato_cpf", referencedColumnName = "cpf")
+    private Candidato candidato;
+
+    @OneToMany(mappedBy = "curriculo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Formacao> formacoes;
+
+    @OneToMany(mappedBy = "curriculo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Cursos> cursos;
+
+    @OneToMany(mappedBy = "curriculo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Experiencias> experiencias;
+
+
+    @NotEmpty
+    @Pattern(regexp = "\\(\\d{2}\\) \\d{5}-\\d{4}", message = "O formato válido para preencher é: (DDD) xxxxx-xxxx")
+    private String telefone;
+
+    @NotEmpty
+    private String cidade;
+
+    @NotEmpty
+    private String estado;
+
+    @NotEmpty
+    private String genero;
+
+    @NotEmpty
+    private String escolaridade;
+
+    @NotEmpty
+    private String idioma;
+
+    @NotEmpty
     private String area;
-    @NotNull
+
+    @NotEmpty
     private String objetivo;
-    private Experiencias experiencias = new Experiencias();
-    private Formacao formacao = new Formacao();
-    @NotNull
-    private String tags; //Não teria que ter uma tabela com tags?
-    
+
+    @NotEmpty
+    private String tags;
+
+
     public Curriculo() {
     }
 
-    public Curriculo(Long id, @NotNull String area, @NotNull String objetivo, Experiencias experiencias,
-            Formacao formacao, @NotNull String tags) {
+    public Curriculo(Long id, Candidato candidato, List<Formacao> formacoes, List<Experiencias> experiencias, List<Cursos> cursos,
+            @NotEmpty @Pattern(regexp = "\\(\\d{2}\\) \\d{5}-\\d{4}", message = "O formato válido para preencher é: (DDD) xxxxx-xxxx") String telefone,
+            @NotEmpty String cidade, @NotEmpty String estado, @NotEmpty String genero, @NotEmpty String escolaridade,
+            @NotEmpty String idioma, @NotEmpty String area, @NotEmpty String objetivo, @NotEmpty String tags) {
         this.id = id;
+        this.candidato = candidato;
+        this.formacoes = formacoes;
+        this.experiencias = experiencias;
+        this.cursos = cursos;
+        this.telefone = telefone;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.genero = genero;
+        this.escolaridade = escolaridade;
+        this.idioma = idioma;
         this.area = area;
         this.objetivo = objetivo;
-        this.experiencias = experiencias;
-        this.formacao = formacao;
         this.tags = tags;
     }
 
@@ -35,6 +85,54 @@ public class Curriculo {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getEscolaridade() {
+        return escolaridade;
+    }
+
+    public void setEscolaridade(String escolaridade) {
+        this.escolaridade = escolaridade;
+    }
+
+    public String getIdioma() {
+        return idioma;
+    }
+
+    public void setIdioma(String idioma) {
+        this.idioma = idioma;
     }
 
     public String getArea() {
@@ -53,22 +151,6 @@ public class Curriculo {
         this.objetivo = objetivo;
     }
 
-    public Experiencias getExperiencias() {
-        return experiencias;
-    }
-
-    public void setExperiencias(Experiencias experiencias) {
-        this.experiencias = experiencias;
-    }
-
-    public Formacao getFormacao() {
-        return formacao;
-    }
-
-    public void setFormacao(Formacao formacao) {
-        this.formacao = formacao;
-    }
-
     public String getTags() {
         return tags;
     }
@@ -76,6 +158,36 @@ public class Curriculo {
     public void setTags(String tags) {
         this.tags = tags;
     }
-    
-    
+
+    public Candidato getCandidato() {
+        return candidato;
+    }
+
+    public void setCandidato(Candidato candidato) {
+        this.candidato = candidato;
+    }
+
+    public List<Formacao> getFormacoes() {
+        return formacoes;
+    }
+
+    public void setFormacoes(List<Formacao> formacoes) {
+        this.formacoes = formacoes;
+    }
+
+    public List<Cursos> getCursos() {
+        return cursos;
+    }
+
+    public void setCursos(List<Cursos> cursos) {
+        this.cursos = cursos;
+    }
+
+    public List<Experiencias> getExperiencias() {
+        return experiencias;
+    }
+
+    public void setExperiencias(List<Experiencias> experiencias) {
+        this.experiencias = experiencias;
+    }
 }
