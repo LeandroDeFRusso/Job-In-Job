@@ -2,7 +2,6 @@ package com.jobinjob.demo.controller;
 
 import java.util.List;
 
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jobinjob.demo.model.Candidato;
 import com.jobinjob.demo.service.CandidatoService;
 
+import jakarta.validation.Valid;
+
+
 @RestController
 @RequestMapping("/candidato")
 public class CandidatoController {
@@ -26,18 +28,12 @@ public class CandidatoController {
     CandidatoService candidatoService;
 
     @PostMapping("/add")
-    public ResponseEntity<String> adicionarCandidato(@Valid @RequestBody Candidato candidato) {
-        try {
-            candidatoService.adicionarCandidato(candidato);
-            return ResponseEntity.ok("Candidato adicionado com sucesso");
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao processar candidato");
-        }
+    public Candidato adicionarCandidato(@Valid @RequestBody Candidato candidato) {
+        return candidatoService.adicionarCandidato(candidato);
     }
 
     @PutMapping("/update/{cpf}")
-    public ResponseEntity<?> atualizarCandidato(@Valid @PathVariable String cpf, @RequestBody Candidato candidato) {
+    public ResponseEntity<?> atualizarCandidato(@PathVariable String cpf, @RequestBody Candidato candidato) {
         if(candidatoService.atualizarCandidato(cpf, candidato) == null) {
             String mensagem = "O cpf " + cpf + " não existe na base de dados";
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(mensagem);
@@ -51,7 +47,7 @@ public class CandidatoController {
     }
 
     @DeleteMapping("/delete/{cpf}")
-    public ResponseEntity<?> deletarCandidato(@Valid @PathVariable String cpf) {
+    public ResponseEntity<?> deletarCandidato(@PathVariable String cpf) {
         if(candidatoService.deletarCandidato(cpf)) {
             String mensagem = "O cpf " + cpf + " foi excluído com sucesso";
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(mensagem);

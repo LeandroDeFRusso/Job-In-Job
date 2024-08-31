@@ -1,7 +1,6 @@
 package com.jobinjob.demo.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,27 +13,27 @@ public class EmpresaService {
     @Autowired
     EmpresaRepository empresaRepository;
 
-    public List<Empresa> listarEmpresas(){
+     public List<Empresa> listarEmpresas() {
         return empresaRepository.findAll();
     }
 
-    public Empresa adicionarEmpresa(Empresa empresa){
+    public Empresa adicionarEmpresa(Empresa empresa) {
         return empresaRepository.save(empresa);
     }
 
-    public Empresa atualizarEmpresa(String id, Empresa empresa){
-        if (empresaRepository.existsById(id)) {
-            empresa.setCnpj(id);
+    public Empresa atualizarEmpresa(String cnpj, Empresa empresa) {
+        if(empresaRepository.existsById(cnpj)) {
+            empresa.setCnpj(cnpj);
             return empresaRepository.save(empresa);
         }
         return null;
     }
 
-    public boolean deletarEmpresa(String id){
-        if(empresaRepository.existsById(id)){
-            empresaRepository.deleteById(id);
+    public boolean deletarEmpresa(String cnpj) {
+        if(empresaRepository.existsById(cnpj)) {
+            empresaRepository.deleteById(cnpj);
             return true;
         }
         return false;
-    } 
+    }
 }

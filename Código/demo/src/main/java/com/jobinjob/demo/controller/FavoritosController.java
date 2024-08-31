@@ -1,7 +1,6 @@
 package com.jobinjob.demo.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,11 +9,15 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jobinjob.demo.model.Favoritos;
 import com.jobinjob.demo.service.FavoritosService;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/favoritos")
@@ -23,11 +26,18 @@ public class FavoritosController {
     @Autowired
     FavoritosService favoritosService;
 
-   
-    @PostMapping("/curriculo/{curriculoId}")
-    public ResponseEntity<Favoritos> favoritarCurriculo(@PathVariable Long curriculoId) {
-        Favoritos favoritos = favoritosService.favoritarCurriculo(curriculoId);
-        return ResponseEntity.status(HttpStatus.CREATED).body(favoritos);
+    @PostMapping("/add")
+    public Favoritos adicionarFavoritos(@Valid @RequestBody Favoritos favoritos) {
+        return favoritosService.adicionarFavoritos(favoritos);
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> atualizarFavoritos(@PathVariable Long id, @RequestBody Favoritos favoritos) {
+        if(favoritosService.atualizFavoritos(id, favoritos) == null) {
+            String mensagem = "O id " + id + " não existe na base de dados";
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(mensagem);
+        }
+        return ResponseEntity.ok(favoritos);
     }
 
     @GetMapping
@@ -35,16 +45,13 @@ public class FavoritosController {
         return favoritosService.listarFavoritos();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Favoritos> buscarFavoritosPorId(@PathVariable Long id) {
-        Optional<Favoritos> favoritos = favoritosService.buscarFavoritosPorId(id);
-        return favoritos.map(ResponseEntity::ok)
-                        .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> desfavoritar(@PathVariable Long id) {
-        favoritosService.desfavoritar(id);
-        return ResponseEntity.noContent().build();
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deletarFavoritos(@PathVariable Long id) {
+        if(favoritosService.deletarFavoritos(id)) {
+            String mensagem = "O id " + id + " foi excluído com sucesso";
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(mensagem);
+        }
+        String mensagem = "O id " + id + " não existe na base de dados";
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(mensagem);
     }
 }

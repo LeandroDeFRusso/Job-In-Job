@@ -1,24 +1,24 @@
 package com.jobinjob.demo.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
 
-
-@Entity
 public class Favoritos {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @OneToOne
-    @JoinColumn(name = "curriculo_id", referencedColumnName = "id")
-    private Curriculo curriculo;
-
+    @NotNull
+    private Empresa empresa = new Empresa();
+    @NotNull
+    private Curriculo curriculo = new Curriculo();
+    
     public Favoritos() {
     }
 
-    public Favoritos(Long id, Curriculo curriculo) {
+
+    public Favoritos(Long id, @NotNull Empresa empresa, @NotNull Curriculo curriculo) {
         this.id = id;
+        this.empresa = empresa;
         this.curriculo = curriculo;
     }
 
@@ -26,17 +26,22 @@ public class Favoritos {
         return id;
     }
 
+
     public void setId(Long id) {
         this.id = id;
     }
 
+    public Empresa getEmpresa() {
+        return empresa;
+    }
 
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
 
     public Curriculo getCurriculo() {
         return curriculo;
     }
-
-
 
     public void setCurriculo(Curriculo curriculo) {
         this.curriculo = curriculo;

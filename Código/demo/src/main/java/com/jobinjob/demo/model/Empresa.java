@@ -1,46 +1,33 @@
 package com.jobinjob.demo.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-@Entity
 public class Empresa {
-
+    
     @Id
     @Size(min = 14, max = 18)
-    @Column(unique = true)
     private String cnpj;
-
-    @NotEmpty
+    @NotNull
     private String nomeEmpresa;
-
-    @NotEmpty
-    @Email
+    @NotNull
     private String email;
-
-    @NotEmpty
-    private String cidade;
-
-    @NotEmpty
-    private String estado;
-
-    @NotEmpty
-    @Size(min = 6, max = 10)
-    private String senha;
-
+    @NotNull
+    @Autowired
+    private PasswordEncoder senha;
+    
     public Empresa() {
     }
 
-    public Empresa(String cnpj, @NotEmpty String nomeEmpresa, @NotEmpty String email,@NotEmpty String cidade, @NotEmpty String estado, @NotEmpty String senha) {
+    public Empresa(@Size(min = 14, max = 18) String cnpj, @NotNull String nomeEmpresa, @NotNull String email,
+            @NotNull PasswordEncoder senha) {
         this.cnpj = cnpj;
         this.nomeEmpresa = nomeEmpresa;
         this.email = email;
-        this.cidade = cidade;
-        this.estado = estado;
         this.senha = senha;
     }
 
@@ -68,29 +55,13 @@ public class Empresa {
         this.email = email;
     }
 
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public String getSenha() {
+    public PasswordEncoder getSenha() {
         return senha;
     }
 
-    public void setSenha(String senha) {
+    public void setSenha(PasswordEncoder senha) {
         this.senha = senha;
     }
 
-
+    
 }

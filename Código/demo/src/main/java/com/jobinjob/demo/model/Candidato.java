@@ -1,50 +1,40 @@
 package com.jobinjob.demo.model;
 
-import java.time.LocalDate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-@Entity
 public class Candidato {
+
 
     @Id
     @Size(min=11, max=14)
-    @Column(unique = true)
     private String cpf;
-
-    @NotEmpty
-    private String nome;
-
     @NotNull
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-    private LocalDate dataNasc;
-
-    @NotEmpty
-    @Email
+    private String nome;
+    @NotNull
+    private int idade;
+    @NotNull
     private String email;
-
-    @NotEmpty
-    @Size(min = 6,max = 10)
-    private String senha;
-
+    @NotNull
+    @Autowired
+    private PasswordEncoder senha;
+    private String genero;
+    
     public Candidato() {
     }
 
-
-
-    public Candidato(@Size(min = 11, max = 14) String cpf, @NotEmpty String nome, @NotNull LocalDate dataNasc,
-            @NotEmpty String email, @NotEmpty String senha) {
+    public Candidato(@Size(min = 11, max = 14) String cpf, @NotNull String nome, @NotNull int idade,
+            @NotNull String email, @NotNull PasswordEncoder senha, String genero) {
         this.cpf = cpf;
         this.nome = nome;
-        this.dataNasc = dataNasc;
+        this.idade = idade;
         this.email = email;
         this.senha = senha;
+        this.genero = genero;
     }
 
     public String getCpf() {
@@ -63,12 +53,12 @@ public class Candidato {
         this.nome = nome;
     }
 
-    public LocalDate getDataNasc() {
-        return dataNasc;
+    public int getIdade() {
+        return idade;
     }
 
-    public void setDataNasc(LocalDate dataNasc) {
-        this.dataNasc = dataNasc;
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 
     public String getEmail() {
@@ -79,12 +69,21 @@ public class Candidato {
         this.email = email;
     }
 
-    public String getSenha() {
+    public PasswordEncoder getSenha() {
         return senha;
     }
 
-    public void setSenha(String senha) {
+    public void setSenha(PasswordEncoder senha) {
         this.senha = senha;
     }
 
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    
 }

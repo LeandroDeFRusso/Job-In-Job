@@ -31,10 +31,10 @@ public class FormacaoService {
     }
 
     public boolean deletarFormacao(Long id){
-        if(formacaoRepository.existsById(id)){
+        if (formacaoRepository.existsById(id)) {
             formacaoRepository.deleteById(id);
             return true;
         }
         return false;
-    } 
+    }
 }
