@@ -2,6 +2,7 @@ package com.jobinjob.demo.controller;
 
 import java.util.List;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,24 +18,28 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jobinjob.demo.model.Empresa;
 import com.jobinjob.demo.service.EmpresaService;
 
-import jakarta.validation.Valid;
-
 @RestController
-@RequestMapping("/empresa")
+@RequestMapping("empresa")
 public class EmpresaController {
     
     @Autowired
     EmpresaService empresaService;
 
-    @PostMapping("/add")
-    public Empresa adicionarEmpresa(@Valid @RequestBody Empresa empresa) {
-        return empresaService.adicionarEmpresa(empresa);
+     @PostMapping("/add")
+    public ResponseEntity<String> adicionarEmpresa(@Valid @RequestBody Empresa empresa) {
+        try {
+            empresaService.adicionarEmpresa(empresa);
+            return ResponseEntity.ok("Empresa adicionado com sucesso");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao processar empresa");
+        }
     }
 
     @PutMapping("/update/{cnpj}")
-    public ResponseEntity<?> atualizarEmpresa(@PathVariable String cnpj, @RequestBody Empresa empresa) {
+    public ResponseEntity<?> atualizarEmpresa(@Valid @PathVariable String cnpj, @RequestBody Empresa empresa) {
         if(empresaService.atualizarEmpresa(cnpj, empresa) == null) {
-            String mensagem = "O CNPJ " + cnpj + " não existe na base de dados";
+            String mensagem = "O cnpj " + cnpj + " não existe na base de dados";
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(mensagem);
         }
         return ResponseEntity.ok(empresa);
@@ -46,12 +51,12 @@ public class EmpresaController {
     }
 
     @DeleteMapping("/delete/{cnpj}")
-    public ResponseEntity<?> deletarEmpresa(@PathVariable String cnpj) {
+    public ResponseEntity<?> deletarEmpresa(@Valid @PathVariable String cnpj) {
         if(empresaService.deletarEmpresa(cnpj)) {
-            String mensagem = "O CNPJ " + cnpj + " foi excluído com sucesso";
+            String mensagem = "O cnpj " + cnpj + " foi excluído com sucesso";
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(mensagem);
         }
-        String mensagem = "O CNPJ" + cnpj + " não existe na base de dados";
+        String mensagem = "O cnpj " + cnpj + " não existe na base de dados";
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(mensagem);
     }
 }
