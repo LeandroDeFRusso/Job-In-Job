@@ -1,31 +1,42 @@
 package com.jobinjob.demo.model;
 
-import java.sql.Date;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.*;
 
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
-
+@Entity
 public class Experiencias {
-
+    
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
+
+    @ManyToOne
+    @JoinColumn(name = "curriculo_id")
+    private Curriculo curriculo;
+
     private String cargo;
-    @NotNull
-    private String cnpjEx;
-    @NotNull
-    private Date entrada;
-    private Date saida;
+
+    private String nomeEmp;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    private int anoEntrada;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    private int anoSaida;
+
+    private String descricao;
 
     public Experiencias() {
     }
 
-    public Experiencias(Long id, String cargo, String cnpjEx, Date entrada, Date saida) {
+    public Experiencias(Long id, Curriculo curriculo, String cargo, String nomeEmp, int anoEntrada, int anoSaida, String descricao) {
         this.id = id;
         this.cargo = cargo;
-        this.cnpjEx = cnpjEx;
-        this.entrada = entrada;
-        this.saida = saida;
+        this.nomeEmp = nomeEmp;
+        this.anoEntrada = anoEntrada;
+        this.anoSaida = anoSaida;
+        this.descricao = descricao;
+        this.curriculo = curriculo;
     }
 
     public Long getId() {
@@ -44,28 +55,43 @@ public class Experiencias {
         this.cargo = cargo;
     }
 
-    public String getCnpjEx() {
-        return cnpjEx;
+    public String getNomeEmp() {
+        return nomeEmp;
     }
 
-    public void setCnpjEx(String cnpjEx) {
-        this.cnpjEx = cnpjEx;
+    public void setNomeEmp(String nomeEmp) {
+        this.nomeEmp = nomeEmp;
     }
 
-    public Date getEntrada() {
-        return entrada;
+    public int getAnoEntrada() {
+        return anoEntrada;
     }
 
-    public void setEntrada(Date entrada) {
-        this.entrada = entrada;
+    public void setAnoEntrada(int anoEntrada) {
+        this.anoEntrada = anoEntrada;
     }
 
-    public Date getSaida() {
-        return saida;
+    public int getAnoSaida() {
+        return anoSaida;
     }
 
-    public void setSaida(Date saida) {
-        this.saida = saida;
+    public void setAnoSaida(int anoSaida) {
+        this.anoSaida = anoSaida;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Curriculo getCurriculo() {
+        return curriculo;
+    }
+
+    public void setCurriculo(Curriculo curriculo) {
+        this.curriculo = curriculo;
+    }
 }

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monte Seu Currículo</title>
+    <link rel="stylesheet" href="/static/CSS/styles.css">
+    <script>
+        function toggleDataEncerramento(checkbox) {
+            const dataEncerramento = checkbox.closest('.entry').querySelector('.data-encerramento');
+            dataEncerramento.disabled = checkbox.checked;
+        }
+
+        function adicionarExperiencia() {
+            const container = document.getElementById('experience-container');
+            const novaExperiencia = document.createElement('div');
+            novaExperiencia.className = 'experience-entry';
+            
+            novaExperiencia.innerHTML = `
+                <label for="empresa">Empresa:</label>
+                <input type="text" id="empresa" name="empresa[]" required>
+
+                <label for="cargo">Cargo:</label>
+                <input type="text" id="cargo" name="cargo[]" required>
+
+                <label for="data-inicio">Data de Início:</label>
+                <input type="date" id="data-inicio" name="data-inicio[]" required>
+
+                <label for="data-encerramento">Data de Encerramento:</label>
+                <input type="date" id="data-encerramento" class="data-encerramento" name="data-encerramento[]" required>
+
+                <label for="atualmente" style="display:inline; margin-left: 5px;">
+                    <input type="checkbox" class="atualmente" name="atualmente[]" onclick="toggleDataEncerramento(this)">
+                    Atualmente
+                </label>
+
+                <label for="descricao-experiencia">Descrição da Experiência (máx. 300 caracteres):</label>
+                <textarea id="descricao-experiencia" name="descricao-experiencia[]" rows="4" maxlength="300" required></textarea>
+                
+                <hr>
+            `;
+
+            container.appendChild(novaExperiencia);
+        }
+
+        function adicionarEducacao() {
+            const container = document.getElementById('education-container');
+            const novaEducacao = document.createElement('div');
+            novaEducacao.className = 'education-entry';
+            
+            novaEducacao.innerHTML = `
+                <label for="instituicao">Instituição:</label>
+                <input type="text" id="instituicao" name="instituicao[]" required>
+
+                <label for="curso">Curso:</label>
+                <input type="text" id="curso" name="curso[]" required>
+
+                <label for="data-inicio-educacao">Data de Início:</label>
+                <input type="date" id="data-inicio-educacao" name="data-inicio-educacao[]" required>
+
+                <label for="data-formacao">Data de Formação:</label>
+                <input type="date" id="data-formacao" name="data-formacao[]" required>
+
+                <label for="nivel-escolaridade">Nível de Escolaridade:</label>
+                <input type="text" id="nivel-escolaridade" name="nivel-escolaridade[]" required>
+
+                <label for="descricao-educacao">Descrição da Educação (máx. 300 caracteres):</label>
+                <textarea id="descricao-educacao" name="descricao-educacao[]" rows="4" maxlength="300" required></textarea>
+                
+                <hr>
+            `;
+
+            container.appendChild(novaEducacao);
+        }
+
+        function adicionarCurso() {
+            const container = document.getElementById('course-container');
+            const novoCurso = document.createElement('div');
+            novoCurso.className = 'course-entry';
+            
+            novoCurso.innerHTML = `
+                <label for="instituicao-curso">Instituição:</label>
+                <input type="text" id="instituicao-curso" name="instituicao-curso[]" required>
+
+                <label for="curso-profissionalizante">Curso (Profissionalizante):</label>
+                <input type="text" id="curso-profissionalizante" name="curso-profissionalizante[]" required>
+
+                <label for="data-inicio-curso">Data de Início:</label>
+                <input type="date" id="data-inicio-curso" name="data-inicio-curso[]" required>
+
+                <label for="data-encerramento-curso">Data de Encerramento:</label>
+                <input type="date" id="data-encerramento-curso" class="data-encerramento-curso" name="data-encerramento-curso[]" required>
+
+                <label for="atualmente-curso" style="display:inline; margin-left: 5px;">
+                    <input type="checkbox" class="atualmente-curso" name="atualmente-curso[]" onclick="toggleDataEncerramento(this)">
+                    Atualmente
+                </label>
+
+                <label for="descricao-curso">Descrição das Habilidades Desenvolvidas (máx. 300 caracteres):</label>
+                <textarea id="descricao-curso" name="descricao-curso[]" rows="4" maxlength="300" required></textarea>
+                
+                <hr>
+            `;
+
+            container.appendChild(novoCurso);
+
+           
+        }
+
+        function adicionarIdioma() {
+            const container = document.getElementById('language-container');
+            const novoIdioma = document.createElement('div');
+            novoIdioma.className = 'language-entry';
+            
+            novoIdioma.innerHTML = `
+
+                <label for="lingua-estrangeira">Língua Estrangeira:</label>
+                <input type="text" id="lingua-estrangeira" name="lingua-estrangeira[]" required>
+
+                <label for="nivel-proficiencia">Nível de Proficiência:</label>
+                <input type="text" id="nivel-proficiencia" name="nivel-proficiencia[]" required>
+
+        
+            `;
+
+            container.appendChild(novoIdioma);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <h1 id ="inicioJob">JobInJob</h1>
+                <li><a id="iniciomargin" href="telainicial.html" class="active">Tela Inicial</a></li>
+                <li><a id="botaotabs" href="index.html">Login</a></li>
+                <li><a id="botaotabs" href="curriculo.html">Monte seu Currículo</a></li>
+                <li><a id="botaotabs" href="visualizacao.html">Visualizar Currículo</a></li>
+                <li><a id="botaotabs" href="exibircurriculos.html">Exibir Currículos</a></li>
+                <li><a id="botaotabs" href="meu_curriculo.html">Meu Currículo</a></li>
+                <li><a id="botaotabs" href="logincpf.html">Login candidatos</a></li>
+                <li><a id="botaotabs" href="cadastrocpf.html">Cadastro Candidato</a></li>
+                <li><a id="botaotabs" href="logincnpj.html">Login empresas</a></li>
+                <li><a id="botaotabs" href="cadastrocnpj.html">Cadastro Empresas</a></li>
+            
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h2>Monte Seu Currículo</h2>
+            <form>
+                <!-- Dados Pessoais e Área -->
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Ex: João da Silva" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Ex: joao.silva@example.com" required>
+
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" placeholder= "Ex: São Paulo" required>
+
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado" placeholder= "Ex: São Paulo" required>
+
+                <label for="data-nascimento">Data de Nascimento:</label>
+                <input type="date" id="data-nascimento" name="data-nascimento" placeholder= "Ex: 01/02/2000" required>
+
+                <label for="telefone">Número de Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" placeholder= "Ex: (11) 99999-9999" required>
+
+                <label for="genero">Gênero:</label>
+                <select id="genero" name="genero" required>
+                    <option value="">Selecione</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
+
+                <label for="descricao ">Descrição (máx. 300 caracteres):</label>
+                <textarea id="descricao" name="descricao" placeholder= "Preencha a descrição" rows="4" maxlength="300" required></textarea>
+                <hr>
+                <!-- Campo de Área -->
+                <label for="area">Área:</label>
+                <select id="area" name="area" required>
+                    <option value="">Selecione uma área</option>
+                    <option value="saude">Saúde: Medicina, enfermagem, psicologia, fisioterapia...</option>
+                    <option value="educacao">Educação: Ensino fundamental, ensino médio, ensino superior, educação especial...</option>
+                    <option value="tecnologia">Tecnologia: Desenvolvimento de software, segurança da informação, inteligência artificial...</option>
+                    <option value="direito">Direito: Direito penal, direito civil, direito ambiental, direito corporativo.</option>
+                    <option value="arte-design">Arte e Design: Design gráfico, artes plásticas, moda, arquitetura.</option>
+                    <option value="marketing-vendas">Marketing e Vendas: Pesquisa de mercado, estratégias de marketing, gestão de vendas...</option>
+                    <option value="financas">Finanças: Contabilidade, auditoria, planejamento financeiro.</option>
+                    <option value="recursos-humanos">Recursos Humanos: Recrutamento e seleção, desenvolvimento organizacional...</option>
+                    <option value="operacoes">Operações: Logística, gestão de cadeias de suprimentos, melhoria de processos.</option>
+                    <option value="pesquisa">Pesquisa: Ciências naturais, ciências sociais, engenharia.</option>
+                    <option value="trabalho-social">Trabalho Social: Assistência social, ONGs, projetos comunitários.</option>
+                    <option value="cultura-lazer">Cultura e Lazer: Produção cultural, eventos, turismo.</option>
+                    <option value="outros">Outros</option>
+                </select>
+                <hr>
+                <!-- Container para as Experiências -->
+                <div id="experience-container">
+                    <h3>Experiência Profissional</h3>
+
+                    <div class="experience-entry">
+                        <label for="empresa">Empresa:</label>
+                        <input type="text" id="empresa" name="empresa[]" placeholder= "Ex: Job In Job" required>
+
+                        <label for="cargo">Cargo:</label>
+                        <input type="text" id="cargo" name="cargo[]" placeholder= "Ex: Auxiliar Adminsitrativo" required>
+
+                        <label for="data-inicio">Data de Início:</label>
+                        <input type="date" id="data-inicio" name="data-inicio[]" required>
+
+                        <label for="data-encerramento">Data de Encerramento:</label>
+                        <input type="date" id="data-encerramento" class="data-encerramento" name="data-encerramento[]" required>
+
+                        <label for="atualmente" style="display:inline; margin-left: 5px;">
+                            <input type="checkbox" class="atualmente" name="atualmente[]" onclick="toggleDataEncerramento(this)">
+                            Atualmente
+                        </label>
+
+                        <label for="descricao-experiencia">Descrição da Experiência (máx. 300 caracteres):</label>
+                        <textarea id="descricao-experiencia" name="descricao-experiencia[]" rows="4" maxlength="300" required placeholder= "Preencha a descrição"></textarea>
+                        <button id="add-experience" type="button" onclick="adicionarExperiencia()">Adicionar nova Experiência</button>
+                        <hr>
+                    </div>
+
+                    <!-- Botão para adicionar nova experiência -->
+                   
+                </div>
+
+                <!-- Container para a Educação -->
+                <div id="education-container">
+                    <h3>Educação</h3>
+
+                    <div class="education-entry">
+                        <label for="instituicao">Instituição:</label>
+                        <input type="text" id="instituicao" name="instituicao[]" required placeholder= "Ex: Universidade Estadual de São Paulo">
+
+                        <label for="curso">Curso:</label>
+                        <input type="text" id="curso" name="curso[]" required placeholder= "Ex: Bachalerado em Engenharia de Software">
+
+                        <label for="data-inicio-educacao">Data de Início:</label>
+                        <input type="date" id="data-inicio-educacao" name="data-inicio-educacao[]" required>
+
+                        <label for="data-formacao">Data de Formação:</label>
+                        <input type="date" id="data-formacao" name="data-formacao[]" required>
+
+                        <label for="nivel-escolaridade">Nível de Escolaridade:</label>
+                        <input type="text" id="nivel-escolaridade" name="nivel-escolaridade[]" required placeholder= "Ex: Ensino Médio Completo">
+
+                        <label for="descricao-educacao">Descrição da Educação (máx. 300 caracteres):</label>
+                        <textarea id="descricao-educacao" name="descricao-educacao[]" rows="4" maxlength="300" required placeholder= "Preencha a descrição"></textarea>
+                        <button id="add-education" type="button" onclick="adicionarEducacao()">Adicionar nova Educação</button>
+                        <hr>
+                    </div>
+
+                    <!-- Botão para adicionar nova educação -->
+                  
+                </div>
+
+                <!-- Container para os Cursos -->
+                <div id="course-container">
+                    <h3>Cursos</h3>
+
+                    <div class="course-entry">
+                        <label for="instituicao-curso">Instituição:</label>
+                        <input type="text" id="instituicao-curso" name="instituicao-curso[]" required placeholder= "Ex: JobInJob English">
+
+                        <label for="curso-profissionalizante">Curso (Profissionalizante):</label>
+                        <input type="text" id="curso-profissionalizante" name="curso-profissionalizante[]" required placeholder= "Ex: Curso de Inglês">
+
+                        <label for="data-inicio-curso">Data de Início:</label>
+                        <input type="date" id="data-inicio-curso" name="data-inicio-curso[]" required>
+
+                        <label for="data-encerramento-curso">Data de Encerramento:</label>
+                        <input type="date" id="data-encerramento-curso" class="data-encerramento-curso" name="data-encerramento-curso[]" required>
+
+                        <label for="atualmente-curso" style="display:inline; margin-left: 5px;">
+                            <input type="checkbox" class="atualmente-curso" name="atualmente-curso[]" onclick="toggleDataEncerramento(this)">
+                            Atualmente
+                        </label>
+
+                        <label for="descricao-curso">Descrição das Habilidades Desenvolvidas (máx. 300 caracteres):</label>
+                        <textarea id="descricao-curso" name="descricao-curso[]" rows="4" maxlength="300" required placeholder= "Preencha a descrição"></textarea>
+                        <button id="add-course" type="button" onclick="adicionarCurso()">Adicionar novo Curso</button>
+                        <hr>
+                    </div>
+                </div>
+
+                <div id="language-container">
+                    <h3>Idiomas</h3>
+
+                    <div class="language-entry">
+                        <label for="lingua-materna">Língua Materna:</label>
+                        <input type="text" id="lingua-materna" name="lingua-materna[]" required placeholder= "Ex: Português">
+
+                        <label for="lingua-estrangeira">Língua Estrangeira:</label>
+                        <input type="text" id="lingua-estrangeira" name="lingua-estrangeira[]" required placeholder= "Ex: Inglês">
+
+                        <label for="nivel-proficiencia">Nível de Proficiência na Língua Estrangeira:</label>
+                        <input type="text" id="nivel-proficiencia" name="nivel-proficiencia[]" required placeholder= "Ex: Básico, Intermediário, Avançado ou Fluente">
+
+                     
+                    </div>
+
+                    <!-- Botão para adicionar novo idioma -->
+                    <button id="add-language" type="button" onclick="adicionarIdioma()">Adicionar Idioma</button>
+                </div>
+                <hr>
+                <input type="submit" value="Enviar Currículo">
+            </form>
+        </section>
+    </main>
+    <footer>
+    <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
