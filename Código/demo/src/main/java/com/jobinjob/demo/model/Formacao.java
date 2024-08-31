@@ -1,29 +1,49 @@
 package com.jobinjob.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Formacao {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
-    private String universidade;
-    @NotNull
-    private int anoEntrada;
-    @NotNull
-    private int anoSaida;
-    @NotNull
-    private String curso;
 
+    @ManyToOne
+    @JoinColumn(name = "curriculo_id")
+    private Curriculo curriculo;
+
+    @NotEmpty
+    private String universidade;
+
+    @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    private int anoEntada;
+
+    @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    private int anoSaida;
+
+    @NotEmpty
+    private String curso;
+    
     public Formacao() {
     }
 
-    public Formacao(Long id, String universidade, int anoEntrada, int anoSaida, String curso) {
+    public Formacao(Long id, Curriculo curriculo, @NotEmpty String universidade, @NotNull int anoEntada,
+            @NotNull int anoSaida, @NotEmpty String curso) {
         this.id = id;
+        this.curriculo = curriculo;
         this.universidade = universidade;
-        this.anoEntrada = anoEntrada;
+        this.anoEntada = anoEntada;
         this.anoSaida = anoSaida;
         this.curso = curso;
     }
@@ -44,12 +64,12 @@ public class Formacao {
         this.universidade = universidade;
     }
 
-    public int getAnoEntrada() {
-        return anoEntrada;
+    public int getAnoEntada() {
+        return anoEntada;
     }
 
-    public void setAnoEntrada(int anoEntrada) {
-        this.anoEntrada = anoEntrada;
+    public void setAnoEntada(int anoEntada) {
+        this.anoEntada = anoEntada;
     }
 
     public int getAnoSaida() {
@@ -68,5 +88,12 @@ public class Formacao {
         this.curso = curso;
     }
 
-    
+    public Curriculo getCurriculo() {
+        return curriculo;
+    }
+
+    public void setCurriculo(Curriculo curriculo) {
+        this.curriculo = curriculo;
+    }
+
 }

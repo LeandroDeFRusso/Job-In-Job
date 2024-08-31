@@ -3,10 +3,7 @@ package com.jobinjob.demo.model;
 import java.sql.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 
 @Entity
@@ -15,6 +12,10 @@ public class Cursos {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "curriculo_id")
+    private Curriculo curriculo;
 
     @NotEmpty
     private String nomeCurso;
@@ -34,12 +35,13 @@ public class Cursos {
     }
 
     public Cursos(Long id, @NotEmpty String nomeCurso, @NotEmpty Date inicio, @NotEmpty Date termino,
-            @NotEmpty String descricao) {
+            @NotEmpty String descricao, Curriculo curriculo) {
         this.id = id;
         this.nomeCurso = nomeCurso;
         this.inicio = inicio;
         this.termino = termino;
         this.descricao = descricao;
+        this.curriculo = curriculo;
     }
 
     public Long getId() {
@@ -82,5 +84,11 @@ public class Cursos {
         this.termino = termino;
     }
 
-    
+    public Curriculo getCurriculo() {
+        return curriculo;
+    }
+
+    public void setCurriculo(Curriculo curriculo) {
+        this.curriculo = curriculo;
+    }
 }
