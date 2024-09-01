@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,23 +12,40 @@
             <div class="overlap-group">
                 <!-- Área de Cadastro -->
                 <div class="overlap">
-                    <form class="formulario">
-                        <h1 class="cadastro">CADASTRO</h1>
 
-                        <input type="text" class="caixanome" placeholder="Nome da Empresa">
 
-                        <input type="text" class="caixacnpj" placeholder="CNPJ">
 
-                        <input type="email" class="caixaemail" placeholder="Email">
+                    <form method="post" action="/candidato/add" th:object="${candidato}">
+                        <input type="hidden" th:value="${candidato.cpf}" name="cpf" />
+                        <div class="mb-3">
+                            <label class="form-label">Cpf</label>
+                            <input type="text" class="form-control" name="cpf" th:value="${candidato.cpf}">
 
-                        <input type="text" class="caixacidade" placeholder="Cidade">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" name="nome" th:value="${{candidato.nome}}">
+                        </div>
 
-                        <input type="password" class="caixasenha" placeholder="Senha">
+                        <div class="mb-3">
+                            <label class="form-label">Data de Nascimento</label>
+                            <input type="date" class="form-control" name="dataNasc" th:value="${{candidato.dataNasc}}">
+                        </div>
 
-                        <input type="password" class="caixaconfirmar" placeholder="Confirmar Senha">
+                        <div class="mb-3">
+                            <label class="form-label">E-mail</label>
+                            <input type="email" class="form-control" name="email" th:value="${{candidato.email}}">
+                        </div>
 
-                        <button type="button" class="cadastrar" onclick="window.location.href='curriculo.html';">Cadastrar</button>
+                        <div class="mb-3">
+                            <label class="form-label">Insira a sua Senha</label>
+                            <input type="password" class="form-control" name="senha" th:value="${{candidato.senha}}">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </form>
+
+
                 </div>
 
                 <!-- Área Lateral -->

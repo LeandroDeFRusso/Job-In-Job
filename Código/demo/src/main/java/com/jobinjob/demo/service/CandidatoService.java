@@ -9,7 +9,7 @@ import com.jobinjob.demo.repository.CandidatoRepository;
 
 @Service
 public class CandidatoService {
-    
+
     @Autowired
     CandidatoRepository candidatoRepository;
 
@@ -35,5 +35,5 @@ public class CandidatoService {
             return true;
         }
         return false;
-    } 
+    }
 }

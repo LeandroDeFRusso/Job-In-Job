@@ -1,40 +1,48 @@
 package com.jobinjob.demo.controller;
 
-import java.util.List;
-
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 import com.jobinjob.demo.model.Candidato;
 import com.jobinjob.demo.service.CandidatoService;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
-@RequestMapping("/candidato")
+@RequestMapping ("/candidato")
 public class CandidatoController {
-    
+
     @Autowired
     CandidatoService candidatoService;
 
-    @PostMapping("/add")
-    public ResponseEntity<String> adicionarCandidato(@Valid @RequestBody Candidato candidato) {
+    @GetMapping("/create")
+    public ModelAndView home() {
+        ModelAndView mv = new ModelAndView("create");
+        mv.addObject("candidato", new Candidato());
+        return mv;
+    }
+
+    @PostMapping("/create")
+    public String adicionarCandidato(@Valid Candidato candidato, BindingResult result) {
+        if (result.hasErrors()) {
+            return "candidato/create";
+        }
+
         try {
             candidatoService.adicionarCandidato(candidato);
-            return ResponseEntity.ok("Candidato adicionado com sucesso");
+            return "redirect:/curriculo";
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao processar candidato");
+            return "candidato/create";
         }
     }
+
+
+
+
 
     @PutMapping("/update/{cpf}")
     public ResponseEntity<?> atualizarCandidato(@Valid @PathVariable String cpf, @RequestBody Candidato candidato) {
@@ -45,10 +53,6 @@ public class CandidatoController {
         return ResponseEntity.ok(candidato);
     }
 
-    @GetMapping
-    public List<Candidato> listarCandidatos() {
-        return candidatoService.listarCandidatos();
-    }
 
     @DeleteMapping("/delete/{cpf}")
     public ResponseEntity<?> deletarCandidato(@Valid @PathVariable String cpf) {
