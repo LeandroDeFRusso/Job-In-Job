@@ -2,10 +2,8 @@ package com.jobinjob.demo.service;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.jobinjob.demo.model.Candidato;
 import com.jobinjob.demo.model.Curriculo;
 import com.jobinjob.demo.model.Formacao;
@@ -60,4 +58,3 @@ public class CurriculoService {
         return false;
     }
 }
-

@@ -4,14 +4,14 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import com.jobinjob.demo.model.Candidato;
 import com.jobinjob.demo.service.CandidatoService;
 import org.springframework.web.servlet.ModelAndView;
 
-@RestController
+@Controller
 @RequestMapping ("/candidato")
 public class CandidatoController {
 
@@ -30,10 +30,9 @@ public class CandidatoController {
         if (result.hasErrors()) {
             return "candidato/create";
         }
-
         try {
             candidatoService.adicionarCandidato(candidato);
-            return "redirect:/curriculo";
+            return "redirect:/curriculo/salvar";
         } catch (Exception e) {
             e.printStackTrace();
             return "candidato/create";

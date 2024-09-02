@@ -3,7 +3,6 @@ package com.jobinjob.demo.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.jobinjob.demo.model.Candidato;
 import com.jobinjob.demo.repository.CandidatoRepository;
 

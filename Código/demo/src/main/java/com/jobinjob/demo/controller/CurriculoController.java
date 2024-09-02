@@ -18,7 +18,7 @@ import com.jobinjob.demo.model.Experiencias;
 @RestController
 @RequestMapping("/curriculo")
 public class CurriculoController {
-    
+
     @Autowired
     CurriculoService curriculoService;
 

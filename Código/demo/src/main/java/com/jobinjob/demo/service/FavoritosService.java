@@ -2,12 +2,9 @@ package com.jobinjob.demo.service;
 
 import java.util.List;
 import java.util.Optional;
-
 import jakarta.persistence.EntityNotFoundException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.jobinjob.demo.model.Curriculo;
 import com.jobinjob.demo.model.Favoritos;
 import com.jobinjob.demo.repository.CurriculoRepository;

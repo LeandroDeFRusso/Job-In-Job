@@ -1,62 +1,71 @@
 package com.jobinjob.demo.controller;
 
-import java.util.List;
-
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 import com.jobinjob.demo.model.Empresa;
 import com.jobinjob.demo.service.EmpresaService;
+import org.springframework.web.servlet.ModelAndView;
 
-@RestController
-@RequestMapping("empresa")
+import java.util.List;
+
+@Controller
+@RequestMapping("/empresa")
 public class EmpresaController {
-    
-    @Autowired
-    EmpresaService empresaService;
 
-     @PostMapping("/add")
-    public ResponseEntity<String> adicionarEmpresa(@Valid @RequestBody Empresa empresa) {
+    @Autowired
+    private EmpresaService empresaService;
+
+
+    @GetMapping("/add")
+    public ModelAndView home() {
+        ModelAndView mv = new ModelAndView("cadastroEmpresa");
+        mv.addObject("empresa", new Empresa());
+        return mv;
+    }
+
+    @PostMapping("/add")
+    public String adicionarCandidato(@Valid Empresa empresa, BindingResult result) {
+        if (result.hasErrors()) {
+            return "empresa/create";
+        }
         try {
             empresaService.adicionarEmpresa(empresa);
-            return ResponseEntity.ok("Empresa adicionado com sucesso");
+            return "redirect:/curriculo/add";
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao processar empresa");
+            return "empresa/create";
         }
     }
 
     @PutMapping("/update/{cnpj}")
     public ResponseEntity<?> atualizarEmpresa(@Valid @PathVariable String cnpj, @RequestBody Empresa empresa) {
         if(empresaService.atualizarEmpresa(cnpj, empresa) == null) {
-            String mensagem = "O cnpj " + cnpj + " não existe na base de dados";
+            String mensagem = "O CNPJ " + cnpj + " não existe na base de dados";
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(mensagem);
         }
         return ResponseEntity.ok(empresa);
     }
 
     @GetMapping
-    public List<Empresa> listarEmpresas() {
-        return empresaService.listarEmpresas();
+    public String listarEmpresas(Model model) {
+        List<Empresa> empresas = empresaService.listarEmpresas();
+        model.addAttribute("empresas", empresas);
+        return "listaEmpresas";
     }
 
     @DeleteMapping("/delete/{cnpj}")
     public ResponseEntity<?> deletarEmpresa(@Valid @PathVariable String cnpj) {
         if(empresaService.deletarEmpresa(cnpj)) {
-            String mensagem = "O cnpj " + cnpj + " foi excluído com sucesso";
+            String mensagem = "O CNPJ " + cnpj + " foi excluído com sucesso";
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(mensagem);
         }
-        String mensagem = "O cnpj " + cnpj + " não existe na base de dados";
+        String mensagem = "O CNPJ " + cnpj + " não existe na base de dados";
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(mensagem);
     }
 }

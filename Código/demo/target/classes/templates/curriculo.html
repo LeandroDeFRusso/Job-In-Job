@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,10 @@
 <main>
     <section class="form-container">
         <h2>Monte Seu Currículo</h2>
-        <form action="#" th:action="@{/curriculo/salvar}" th:object="${curriculo}" method="post">
+        <form th:action="@{/curriculo/salvar}" th:object="${curriculo}" method="post">
+            <!-- Campo oculto para enviar o CPF do candidato -->
+            <input type="hidden" name="candidatoCpf" th:value="${candidatoCpf}">
+
             <!-- Dados Pessoais e Área -->
             <label for="nome">Nome Completo:</label>
             <input type="text" id="nome" th:field="*{candidato.nome}" placeholder="Ex: João da Silva" required>
@@ -83,22 +86,21 @@
             <!-- Container para as Experiências -->
             <div id="experience-container">
                 <h3>Experiência Profissional</h3>
-
                 <div th:each="exp, iterStat : *{experiencias}">
                     <label for="empresa">Empresa:</label>
-                    <input type="text" th:field="*{experiencias[__${iterStat.index}__].empresa}" placeholder="Ex: Job In Job" required>
+                    <input type="text" th:field="*{experiencias[${iterStat.index}].empresa}" placeholder="Ex: Job In Job" required>
 
                     <label for="cargo">Cargo:</label>
-                    <input type="text" th:field="*{experiencias[__${iterStat.index}__].cargo}" placeholder="Ex: Auxiliar Administrativo" required>
+                    <input type="text" th:field="*{experiencias[${iterStat.index}].cargo}" placeholder="Ex: Auxiliar Administrativo" required>
 
                     <label for="data-inicio">Data de Início:</label>
-                    <input type="date" th:field="*{experiencias[__${iterStat.index}__].dataInicio}" required>
+                    <input type="date" th:field="*{experiencias[${iterStat.index}].dataInicio}" required>
 
                     <label for="data-encerramento">Data de Encerramento:</label>
-                    <input type="date" th:field="*{experiencias[__${iterStat.index}__].dataEncerramento}" required>
+                    <input type="date" th:field="*{experiencias[${iterStat.index}].dataEncerramento}" required>
 
                     <label for="descricao-experiencia">Descrição da Experiência (máx. 300 caracteres):</label>
-                    <textarea th:field="*{experiencias[__${iterStat.index}__].descricaoExperiencia}" rows="4" maxlength="300" required placeholder="Preencha a descrição"></textarea>
+                    <textarea th:field="*{experiencias[${iterStat.index}].descricaoExperiencia}" rows="4" maxlength="300" required placeholder="Preencha a descrição"></textarea>
                     <hr>
                 </div>
             </div>
@@ -106,22 +108,21 @@
             <!-- Container para a Educação -->
             <div id="education-container">
                 <h3>Educação</h3>
-
                 <div th:each="educ, iterStat : *{formacoes}">
                     <label for="instituicao">Instituição:</label>
-                    <input type="text" th:field="*{formacoes[__${iterStat.index}__].instituicao}" placeholder="Ex: Universidade Estadual de São Paulo" required>
+                    <input type="text" th:field="*{formacoes[${iterStat.index}].instituicao}" placeholder="Ex: Universidade Estadual de São Paulo" required>
 
                     <label for="curso">Curso:</label>
-                    <input type="text" th:field="*{formacoes[__${iterStat.index}__].curso}" placeholder="Ex: Bacharelado em Engenharia de Software" required>
+                    <input type="text" th:field="*{formacoes[${iterStat.index}].curso}" placeholder="Ex: Bacharelado em Engenharia de Software" required>
 
                     <label for="data-inicio-educacao">Data de Início:</label>
-                    <input type="date" th:field="*{formacoes[__${iterStat.index}__].dataInicio}" required>
+                    <input type="date" th:field="*{formacoes[${iterStat.index}].dataInicio}" required>
 
                     <label for="data-formacao">Data de Formação:</label>
-                    <input type="date" th:field="*{formacoes[__${iterStat.index}__].dataFormacao}" required>
+                    <input type="date" th:field="*{formacoes[${iterStat.index}].dataFormacao}" required>
 
                     <label for="descricao-educacao">Descrição da Educação (máx. 300 caracteres):</label>
-                    <textarea th:field="*{formacoes[__${iterStat.index}__].descricaoEducacao}" rows="4" maxlength="300" required placeholder="Preencha a descrição"></textarea>
+                    <textarea th:field="*{formacoes[${iterStat.index}].descricaoEducacao}" rows="4" maxlength="300" required placeholder="Preencha a descrição"></textarea>
                     <hr>
                 </div>
             </div>
@@ -129,22 +130,21 @@
             <!-- Container para os Cursos -->
             <div id="course-container">
                 <h3>Cursos</h3>
-
                 <div th:each="curso, iterStat : *{cursos}">
                     <label for="instituicao-curso">Instituição:</label>
-                    <input type="text" th:field="*{cursos[__${iterStat.index}__].instituicaoCurso}" placeholder="Ex: JobInJob English" required>
+                    <input type="text" th:field="*{cursos[${iterStat.index}].instituicaoCurso}" placeholder="Ex: JobInJob English" required>
 
                     <label for="curso-profissionalizante">Curso (Profissionalizante):</label>
-                    <input type="text" th:field="*{cursos[__${iterStat.index}__].cursoProfissionalizante}" placeholder="Ex: Curso de Inglês Avançado" required>
+                    <input type="text" th:field="*{cursos[${iterStat.index}].cursoProfissionalizante}" placeholder="Ex: Curso de Inglês Avançado" required>
 
                     <label for="data-inicio-curso">Data de Início:</label>
-                    <input type="date" th:field="*{cursos[__${iterStat.index}__].dataInicio}" required>
+                    <input type="date" th:field="*{cursos[${iterStat.index}].dataInicio}" required>
 
                     <label for="data-encerramento-curso">Data de Encerramento:</label>
-                    <input type="date" th:field="*{cursos[__${iterStat.index}__].dataEncerramento}" required>
+                    <input type="date" th:field="*{cursos[${iterStat.index}].dataEncerramento}" required>
 
                     <label for="descricao-curso">Descrição das Habilidades Desenvolvidas (máx. 300 caracteres):</label>
-                    <textarea th:field="*{cursos[__${iterStat.index}__].descricaoCurso}" rows="4" maxlength="300" required placeholder="Preencha a descrição"></textarea>
+                    <textarea th:field="*{cursos[${iterStat.index}].descricaoCurso}" rows="4" maxlength="300" required placeholder="Preencha a descrição"></textarea>
                     <hr>
                 </div>
             </div>
@@ -152,13 +152,12 @@
             <!-- Container para os Idiomas -->
             <div id="language-container">
                 <h3>Idiomas</h3>
-
                 <div th:each="idioma, iterStat : *{idiomas}">
                     <label for="idioma">Língua Estrangeira:</label>
-                    <input type="text" th:field="*{idiomas[__${iterStat.index}__].linguaEstrangeira}" placeholder="Ex: Inglês" required>
+                    <input type="text" th:field="*{idiomas[${iterStat.index}].linguaEstrangeira}" placeholder="Ex: Inglês" required>
 
                     <label for="nivel-proficiencia">Nível de Proficiência:</label>
-                    <input type="text" th:field="*{idiomas[__${iterStat.index}__].nivelProficiencia}" placeholder="Ex: Fluente" required>
+                    <input type="text" th:field="*{idiomas[${iterStat.index}].nivelProficiencia}" placeholder="Ex: Fluente" required>
                     <hr>
                 </div>
             </div>
