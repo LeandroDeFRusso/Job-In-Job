@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/static/CSS/cadastrocpf.css">
+</head>
+<body>
+    <div class="box">
+        <div class="group">
+            <div class="overlap-group">
+                <!-- Área de Cadastro -->
+                <div class="overlap">
+                    <form class="formulario">
+                        <h1 class="cadastro">CADASTRO</h1>
+
+                        <input type="text" class="caixanome" placeholder="Nome">
+
+                        <input type="text" class="caixacnpj" placeholder="CPF">
+
+                        <input type="email" class="caixaemail" placeholder="Email">
+
+                        <input type="date" class="caixnascimento" placeholder="Data Nascimento">
+
+                        <input type="password" class="caixasenha" placeholder="Senha">
+
+                        <button type="button" class="cadastrar" onclick="window.location.href='curriculo.html';">Cadastrar</button>
+
+                    </form>
+                </div>
+
+                <!-- Área Lateral -->
+                <div class="lado-esquerdo">
+                    <img class="azul" src="/static/Imagens/logo.jpg" alt="Logo">
+                    <div class="possuicadastro">Já possui cadastro?</div>
+                    <button type="button" class="acesse" onclick="window.location.href='logincpf.html';">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cadastrocpf.js"></script>
+</body>
+</html>
