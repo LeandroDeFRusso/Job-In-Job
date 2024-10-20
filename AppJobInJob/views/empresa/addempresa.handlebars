@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job In Job - Cadastro</title>
+    <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.css">
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="group">
+            <div class="lado-esquerdo">
+                <img src="/img/logo.jpg" alt="Logo">
+                <div class="possuicadastro">Já possui cadastro?</div>
+                <button type="button" class="acesse" onclick="window.location.href='/empresa/login';">Acessar</button>
+            </div>
+
+            <div class="overlap">
+                <form action="/empresa/cadastro/adicionar" method="POST" class="formulario">
+                    <h1 class="cadastro">CADASTRO</h1>
+                    <div class="card-body">
+                        <label for="nome">Nome da Empresa</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite o nome da sua empresa"
+                            class="form-control" required>
+
+                        <label for="cnpj">CNPJ</label>
+                        <input type="text" id="cnpj" name="cnpj" placeholder=" xx.xxx.xxx/xxxx-xx" class="form-control"
+                            required>
+
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" class="form-control"
+                            required>
+
+                        <label for="estado">Estado</label>
+                        <select id="estado" name="estado" class="form-control">
+                            <option value="estado">Selecione o seu estado</option>
+                        </select>
+
+                        <label for="cidade">Cidade</label>
+                        <select id="cidade" name="cidade" class="form-control">
+                            <option value="cidade">Selecione a sua cidade ou região metropolitana</option>
+                        </select>
+
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" placeholder="Crie uma senha"
+                            class="form-control" required>
+
+                        <small>Mínimo de 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e
+                            um caractere especial.</small>
+                        <br>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="mostrar-senha" onclick="togglePassword()">
+                            <label for="mostrar-senha">Mostrar senha</label>
+                        </div>
+
+                        <br>
+                        <button type="submit" class="btn btn-success">Criar Conta!</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #d9d9d9;
+        overflow: hidden;
+    }
+
+    .box {
+        display: flex;
+        width: 90%;
+        max-width: 1200px;
+        background-color: #1c3659;
+        border-radius: 30px;
+        overflow: hidden;
+        height: 80vh;
+        margin: 0 auto;
+    }
+
+    .group {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+
+    .lado-esquerdo {
+        flex: 1;
+        padding: 20px;
+        background-color: #1c3659;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    .lado-esquerdo img {
+        width: 60%;
+        max-width: 250px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .possuicadastro {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .acesse {
+        padding: 10px 20px;
+        background-color: #e3e6e9;
+        color: #1c3659;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .acesse:hover {
+        background-color: #628f9e;
+        color: #ffffff;
+    }
+
+    .overlap {
+        flex: 2;
+        background-color: white;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .formulario {
+        font-size: 10px;
+        width: 90%;
+        max-width: 400px;
+        height: 100%;
+        max-height: -50px;
+        margin-top: 10px;
+        margin-bottom: 3px;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: 33px;
+    }
+
+    .cadastro {
+        color: #1c3659;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    input,
+    .btn,
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        margin-top: 0px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+
+    .btn {
+        background-color: #1c3659;
+        color: white;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 15px;
+    }
+
+    .checkbox-container {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    input[type="checkbox"] {
+        margin-right: 5px;
+        width: 15px;
+        height: 15px;
+    }
+
+    small {
+        font-size: 9px;
+    }
+
+    @media (max-width: 768px) {
+        .box {
+            flex-direction: column;
+            height: auto;
+            width: 90%;
+        }
+
+        .lado-esquerdo {
+            padding: 10px;
+            justify-content: center;
+        }
+
+        .overlap {
+            padding: 20px;
+        }
+
+        .lado-esquerdo img {
+            max-width: 200px;
+        }
+
+        input,
+        .btn {
+            padding: 10px;
+            font-size: 14px;
+        }
+    }
+</style>
+
+<script>
+    function togglePassword() {
+        var passwordField = document.getElementById("senha");
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+document.addEventListener("DOMContentLoaded", function() {
+    var estadosSelect = document.getElementById("estado");
+    var cidadesSelect = document.getElementById("cidade");
+
+    var estadosECidades = {
+        "AC": ["Rio Branco", "Cruzeiro do Sul", "Sena Madureira"],
+        "AL": ["Maceió", "Arapiraca", "Palmeira dos Índios"],
+        "AP": ["Macapá", "Santana", "Laranjal do Jari"],
+        "AM": ["Manaus", "Itacoatiara", "Manacapuru", "Parintins"],
+        "BA": ["Salvador", "Feira de Santana", "Vitória da Conquista", "Ilhéus", "Itabuna", "Lauro de Freitas", "Camaçari"],
+        "CE": ["Fortaleza", "Sobral", "Juazeiro do Norte", "Caucaia", "Maracanaú"],
+        "DF": ["Brasília", "Taguatinga", "Ceilândia", "Samambaia"],
+        "ES": ["Vitória", "Vila Velha", "Serra", "Cariacica", "Guarapari", "Linhares"],
+        "GO": ["Goiânia", "Anápolis", "Aparecida de Goiânia", "Rio Verde", "Catalão"],
+        "MA": ["São Luís", "Imperatriz", "Caxias", "Timon"],
+        "MT": ["Cuiabá", "Várzea Grande", "Rondonópolis", "Sinop"],
+        "MS": ["Campo Grande", "Dourados", "Três Lagoas", "Corumbá"],
+        "MG": ["Belo Horizonte", "Uberlândia", "Contagem", "Juiz de Fora", "Betim", "Montes Claros", "Governador Valadares"],
+        "PA": ["Belém", "Ananindeua", "Santarém", "Marabá", "Castanhal"],
+        "PB": ["João Pessoa", "Campina Grande", "Patos", "Bayeux", "Santa Rita"],
+        "PR": ["Curitiba", "Londrina", "Maringá", "Cascavel", "Ponta Grossa", "Foz do Iguaçu"],
+        "PE": ["Recife", "Olinda", "Jaboatão dos Guararapes", "Caruaru", "Petrolina", "Paulista"],
+        "PI": ["Teresina", "Parnaíba", "Picos", "Floriano"],
+        "RJ": ["Rio de Janeiro", "Niterói", "Volta Redonda", "Duque de Caxias", "São Gonçalo", "Petrópolis", "Nova Iguaçu"],
+        "RN": ["Natal", "Mossoró", "Parnamirim", "Caicó", "Ceará-Mirim"],
+        "RS": ["Porto Alegre", "Caxias do Sul", "Pelotas", "Canoas", "Santa Maria", "Novo Hamburgo", "Gravataí"],
+        "RO": ["Porto Velho", "Ji-Paraná", "Ariquemes", "Cacoal"],
+        "RR": ["Boa Vista", "Rorainópolis", "Caracaraí"],
+        "SC": ["Florianópolis", "Joinville", "Blumenau", "Chapecó", "Itajaí", "Criciúma", "Lages"],
+        "SP": ["São Paulo", "Campinas", "Santos", "Sorocaba", "São José dos Campos", "Ribeirão Preto", "Guarulhos", "Osasco"],
+        "SE": ["Aracaju", "Nossa Senhora do Socorro", "Lagarto", "Itabaiana"],
+        "TO": ["Palmas", "Araguaína", "Gurupi", "Porto Nacional"]
+    };
+
+    function preencherEstados() {
+        for (var estado in estadosECidades) {
+            var option = document.createElement("option");
+            option.value = estado;
+            option.textContent = estado;
+            estadosSelect.appendChild(option);
+        }
+    }
+
+    function preencherCidades(estadoSelecionado) {
+        cidadesSelect.innerHTML = '<option value="">Cidade</option>'; 
+        if (estadosECidades[estadoSelecionado]) {
+            estadosECidades[estadoSelecionado].forEach(function(cidade) {
+                var option = document.createElement("option");
+                option.value = cidade;
+                option.textContent = cidade;
+                cidadesSelect.appendChild(option);
+            });
+        }
+    }
+
+    preencherEstados();
+
+    estadosSelect.addEventListener("change", function() {
+        var estadoSelecionado = this.value;
+        preencherCidades(estadoSelecionado);
+    });
+});
+
+
+
+</script>
