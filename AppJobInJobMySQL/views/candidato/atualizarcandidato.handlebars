@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Candidato - Atualizar</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-item brand">Job In Job</div>
+            <div class="nav-item">
+                <a href="/candidato/perfilcandidato">Início</a>
+                <a href="/candidato/logout">Desconectar</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="containerr">
+        <div class="profile-header">
+            <h1>{{candidato.nome}}</h1>
+            <p>Email: {{candidato.email}}</p>
+            <p>CPF: {{candidato.cpf}}</p>
+        </div>
+
+        <form action="/candidato/atualizarcandidato" method="POST">
+            <div class="info-section">
+                <h3>Informações Pessoais</h3>
+                <div class="info-item">
+                    <strong>Data de Nascimento:</strong> {{candidato.dataNascimento}}
+                </div>
+                <div class="info-item">
+                    <strong>Gênero:</strong> {{candidato.genero}}
+                </div>
+                <div class="info-item">
+                    <label for="telefone">
+                        <strong>Telefone:</strong>
+                    </label>
+                    <input type="text" id="telefone" name="telefone"  value="{{candidato.telefone}}">
+                </div>
+                <div class="info-item">
+                    <label for="cidade">
+                        <strong>Cidade:</strong>
+                    </label>
+                    <input type="text" id="cidade" name="cidade"  value="{{curriculo.cidade}}">
+                </div>
+                <div class="info-item">
+                    <label for="estado">
+                        <strong>Estado:</strong>
+                    </label>
+                    <input type="text" id="estado" name="estado"  value="{{curriculo.estado}}">
+                </div>
+            </div>
+    
+            <div class="info-section">
+                <h3>Experiência</h3>
+                <div class="info-item">
+                    <label for="nomeEmpresa">
+                        <strong>Empresa:</strong>
+                    </label>
+                    <input type="text" id="nomeEmpresa" name="nomeEmpresa"  value="{{experiencia.nomeEmpresa}}">
+                </div>
+                <div class="info-item">
+                    <label for="cargo">
+                        <strong>Cargo:</strong>
+                    </label>
+                    <input type="text" id="cargo" name="cargo"  value="{{experiencia.cargo}}">
+                </div>
+                <div class="info-item">
+                    <label for="dataEntrada">
+                        <strong>Entrada:</strong>
+                    </label>
+                    <input type="txt" id="dataEntrada" name="dataEntrada"  value="{{experiencia.dataEntrada}}">
+                </div>
+                <div class="info-item">
+                    <label for="dataSaida">
+                        <strong>Saída:</strong>
+                    </label>
+                    <input type="text" id="dataSaida" name="dataSaida"  value="{{experiencia.dataSaida}}">
+                </div>
+            </div>
+    
+            <div class="info-section">
+                <h3>Formação</h3>
+                <div class="info-item">
+                    <label for="universidade">
+                        <strong>Instituição:</strong>
+                    </label>
+                    <input type="text" id="universidade" name="universidade"  value="{{formacao.universidade}}">
+                </div>
+                <div class="info-item">
+                    <label for="curso">
+                        <strong>Curso:</strong>
+                    </label>
+                    <input type="text" id="curso" name="curso"  value="{{formacao.cursoGraduacao}}">
+                </div>
+                <div class="info-item">
+                    <label for="dataInicio">
+                        <strong>Início:</strong>
+                    </label>
+                    <input type="text" id="dataInicio" name="dataInicio"  value="{{formacao.dataInicio}}">
+                </div>
+                <div class="info-item">
+                    <label for="dataTermino">
+                        <strong>Término:</strong>
+                    </label>
+                    <input type="text" id="dataTermino" name="dataTermino"  value="{{formacao.dataTermino}}">
+                </div>
+            </div>
+    
+            <div class="info-section">
+                <h3>Área de Interesse</h3>
+                <div class="info-item">
+                    <label for="area">
+                        <strong>Área de Interesse:</strong>
+                    </label>
+                    <input type="text" id="area" name="area"  value="{{curriculo.area}}">
+                </div>
+            </div>
+    
+            <div class="info-section">
+                <h3>Idiomas</h3>
+                <div class="info-item">
+                    <label for="idioma">
+                        <strong>Idioma:</strong>
+                    </label>
+                    <input type="text" id="idioma" name="idioma"  value="{{curriculo.idioma}}">
+                </div>
+            </div>
+            <button type="submit" class="update-button">Atualizar Informações!</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 JobInJob. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav {
+        background-color: #1C3659;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        flex-wrap: wrap; 
+    }
+
+    .nav-item {
+        display: flex; 
+        align-items: center; 
+    }
+
+    .nav-item a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        transition: color 0.3s;
+    }
+
+    .nav-item a:hover {
+        color: #8998ac;
+    }
+
+    .brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .containerr {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    .profile-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .profile-header h2 {
+        margin: 10px 0;
+        color: #555;
+    }
+
+    .profile-header p {
+        margin: 5px 0;
+        color: #777;
+    }
+
+    .info-section {
+        margin-top: 20px;
+        border-top: 2px solid #f0f0f0;
+        padding-top: 10px;
+    }
+
+    .info-section h3 {
+        color: #333;
+    }
+
+    .info-item {
+        margin: 10px 0;
+    }
+
+   .info-item strong {
+        color: #555;
+    }
+
+    label {
+        display: block; /* Isso garante que o label fique em uma linha separada */
+        margin-bottom: 5px; /* Espaço entre o label e o input */
+    }
+
+    input{
+        background-color: #e5e5e5;
+        width: 98%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .update-button {
+        display: block;
+        width: 200px; /* Largura fixa do botão */
+        padding: 10px;
+        margin: 20px auto; /* Centraliza o botão */
+        background-color: #1C3659; 
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center; /* Centraliza o texto do botão */
+        transition: background-color 0.3s, transform 0.3s; 
+    }
+
+    .update-button:hover {
+        background-color: #8998ac; 
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+        background-color: #1C3659;
+        border-top: 1px solid #ddd;
+    }
+
+    footer p {
+        margin: 5px 0;
+        color: white;
+    }
+
+    #dataError {
+        color: red;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+</style>
+
+<script>
+   document.getElementById('dataInicio').addEventListener('input', function(e) {
+        let input = e.target.value;
+            
+            // Remover tudo que não for número
+        input = input.replace(/\D/g, '');
+
+            // Adiciona barras automaticamente
+        if (input.length >= 2) input = input.slice(0, 2) + '/' + input.slice(2);
+        if (input.length >= 5) input = input.slice(0, 5) + '/' + input.slice(5);
+
+        e.target.value = input;
+    });
+
+    // Validação quando o campo perde o foco (blur)
+    document.getElementById('dataInicio').addEventListener('blur', function() {
+        const input = this.value;
+        const regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/; // Formato dd/mm/yyyy
+        const errorSpan = document.getElementById('dataError');
+
+        if (!regex.test(input)) {
+            errorSpan.textContent = "Data inválida. Use o formato dd/mm/yyyy.";
+        } else {
+            errorSpan.textContent = "";  // Limpa mensagem de erro
+        }
+    });
+
+    document.getElementById('dataTermino').addEventListener('input', function(e) {
+        let input = e.target.value;
+            
+            // Remover tudo que não for número
+        input = input.replace(/\D/g, '');
+
+            // Adiciona barras automaticamente
+        if (input.length >= 2) input = input.slice(0, 2) + '/' + input.slice(2);
+        if (input.length >= 5) input = input.slice(0, 5) + '/' + input.slice(5);
+
+        e.target.value = input;
+    });
+
+    // Validação quando o campo perde o foco (blur)
+    document.getElementById('dataTermino').addEventListener('blur', function() {
+        const input = this.value;
+        const regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/; // Formato dd/mm/yyyy
+        const errorSpan = document.getElementById('dataError');
+
+        if (!regex.test(input)) {
+            errorSpan.textContent = "Data inválida. Use o formato dd/mm/yyyy.";
+        } else {
+            errorSpan.textContent = "";  // Limpa mensagem de erro
+        }
+    });
+
+    document.getElementById('dataEntrada').addEventListener('input', function(e) {
+        let input = e.target.value;
+            
+            // Remover tudo que não for número
+        input = input.replace(/\D/g, '');
+
+            // Adiciona barras automaticamente
+        if (input.length >= 2) input = input.slice(0, 2) + '/' + input.slice(2);
+        if (input.length >= 5) input = input.slice(0, 5) + '/' + input.slice(5);
+
+        e.target.value = input;
+    });
+
+    // Validação quando o campo perde o foco (blur)
+    document.getElementById('dataEntrada').addEventListener('blur', function() {
+        const input = this.value;
+        const regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/; // Formato dd/mm/yyyy
+        const errorSpan = document.getElementById('dataError');
+
+        if (!regex.test(input)) {
+            errorSpan.textContent = "Data inválida. Use o formato dd/mm/yyyy.";
+        } else {
+            errorSpan.textContent = "";  // Limpa mensagem de erro
+        }
+    });
+
+    document.getElementById('dataSaida').addEventListener('input', function(e) {
+        let input = e.target.value;
+            
+            // Remover tudo que não for número
+        input = input.replace(/\D/g, '');
+
+            // Adiciona barras automaticamente
+        if (input.length >= 2) input = input.slice(0, 2) + '/' + input.slice(2);
+        if (input.length >= 5) input = input.slice(0, 5) + '/' + input.slice(5);
+
+        e.target.value = input;
+    });
+
+    // Validação quando o campo perde o foco (blur)
+    document.getElementById('dataSaida').addEventListener('blur', function() {
+        const input = this.value;
+        const regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/; // Formato dd/mm/yyyy
+        const errorSpan = document.getElementById('dataError');
+
+        if (!regex.test(input)) {
+            errorSpan.textContent = "Data inválida. Use o formato dd/mm/yyyy.";
+        } else {
+            errorSpan.textContent = "";  // Limpa mensagem de erro
+        }
+    });
+    
+</script>

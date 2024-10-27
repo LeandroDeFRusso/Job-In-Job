@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Candidato</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-item brand">Job In Job</div>
+        <div class="nav-item">
+            <a href="/candidato/perfilcandidato">Início</a>
+            <a href="/candidato/logout">Desconectar</a>
+        </div>
+    </nav>
+
+<form action="/candidato/perfilcandidato" method="GET">
+    <div class="containerr">
+        <div class="profile-header">
+            <h1>{{candidato.nome}}</h1>
+            <p>Email: {{candidato.email}}</p>
+            <p>CPF: {{candidato.cpf}}</p>
+            <p>{{curriculo.cidade}}, {{curriculo.estado}}</p>
+        </div>
+
+        <div class="info-section">
+            <h3>Informações Pessoais</h3>
+            <div class="info-item">
+                <strong>Data de Nascimento:</strong> {{candidato.dataNascimento}}
+            </div>
+            <div class="info-item">
+                <strong>Gênero:</strong> {{candidato.genero}}
+            </div>
+            <div class="info-item">
+                <strong>Telefone:</strong> {{candidato.telefone}}
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>Experiência</h3>
+            <div class="info-item">
+                <strong>Empresa:</strong> {{experiencia.nomeEmpresa}}
+            </div>
+            <div class="info-item">
+                <strong>Cargo:</strong> {{experiencia.cargo}}
+            </div>
+            <div class="info-item">
+                <strong>Entrada:</strong> {{experiencia.dataEntrada}}
+            </div>
+            <div class="info-item">
+                <strong>Saída:</strong> {{experiencia.dataSaida}}
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>Formação</h3>
+            <div class="info-item">
+                <strong>Instituição:</strong> {{formacao.universidade}}
+            </div>
+            <div class="info-item">
+                <strong>Curso:</strong> {{formacao.cursoGraduacao}}
+            </div>
+            <div class="info-item">
+                <strong>Início:</strong> {{formacao.dataInicio}}
+            </div>
+            <div class="info-item">
+                <strong>Término:</strong> {{formacao.dataTermino}}
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>Área de Interesse</h3>
+            <div class="info-item">{{curriculo.area}}</div>
+        </div>
+
+        <div class="info-section">
+            <h3>Idiomas</h3>
+            <div class="info-item">{{curriculo.idioma}}</div>
+        </div>
+
+    </div>
+</form>
+
+<button class="update-button" onclick="location.href='/candidato/atualizarcandidato'">Atualizar Informações</button>
+
+<footer>
+    <p>&copy; 2024 JobInJob. Todos os direitos reservados.</p>
+</footer>
+
+
+</body>
+</html>
+
+<style>
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav {
+        background-color: #1C3659;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        flex-wrap: wrap;
+        width: 100%;
+        top: 0; 
+    }
+
+    .nav-item {
+        display: flex; 
+        align-items: center; 
+    }
+
+    .nav-item a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        transition: color 0.3s;
+    }
+
+    .nav-item a:hover {
+        color: #8998ac;
+    }
+
+    .brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .containerr {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    .profile-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .profile-header h2 {
+        margin: 10px 0;
+        color: #555;
+    }
+
+    .profile-header p {
+        margin: 5px 0;
+        color: #777;
+    }
+
+    .info-section {
+        margin-top: 20px;
+        border-top: 2px solid #f0f0f0;
+        padding-top: 10px;
+    }
+
+    .info-section h3 {
+        color: #333;
+    }
+
+    .info-item {
+        margin: 10px 0;
+    }
+
+   .info-item strong {
+        color: #555;
+    }
+
+    .update-button {
+        display: block;
+        width: 200px; /* Largura fixa do botão */
+        padding: 10px;
+        margin: 20px auto; /* Centraliza o botão */
+        background-color: #1C3659; 
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center; /* Centraliza o texto do botão */
+        transition: background-color 0.3s, transform 0.3s; 
+    }
+
+    .update-button:hover {
+        background-color: #8998ac; 
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+        background-color: #1C3659;
+        border-top: 1px solid #ddd;
+    }
+
+    footer p {
+        margin: 5px 0;
+        color: white;
+    }
+
+    /* Estilos responsivos */
+    @media (max-width: 600px) {
+        .containerr {
+            padding: 10px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        .profile-header h2 {
+            font-size: 1.2rem;
+        }
+
+        .info-section h3 {
+            font-size: 1.1rem;
+        }
+    }
+</style>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualização do Currículo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-item brand">Job In Job</div>
+        <div class="nav-item">
+            <!-- O Início é pra retornar nessa página, Currículos é para mostrar a página de visulização de currículos -->
+            <a href="/empresa/perfilempresa">Início</a>
+            <a href="/empresa/visualizarcurriculos">Currículos</a>
+            <a href="/empresa/logout">Desconectar</a>
+        </div>
+    </nav>
+
+    <form action="/empresa/curriculo/{{CURRICULO_ID}}" method="GET" >
+        <main>
+            <section class="form-container">
+                <h2>Visualização do Currículo</h2>
+
+                <h3>Dados Pessoais</h3>
+                <p><strong>Nome Completo:</strong> {{candidato.nome}}</p>
+                <p><strong>E-mail:</strong> {{candidato.email}}</p>
+                <p><strong>Cidade e UF:</strong> {{curriculo.cidade}} - {{curriculo.estado}}</p>
+                <p><strong>Data de Nascimento:</strong> {{candidato.dataNascimento}}</p>
+                <p><strong>Número de Telefone:</strong> {{candidato.telefone}}</p>
+                <p><strong>Gênero:</strong> {{candidato.genero}}</p>
+                <hr>
+
+                <h3>Experiência</h3>
+                <div class="experience-entry">
+                    <p><strong>Empresa:</strong> {{experiencia.nomeEmpresa}}</p>
+                    <p><strong>Cargo:</strong> {{experiencia.cargo}}</p>
+                    <p><strong>Data de Início:</strong> {{experiencia.dataEntrada}}</p>
+                    <p><strong>Data de Encerramento:</strong> {{#if experiencia.dataSaida}}{{experiencia.dataSaida}}{{else}}Atual{{/if}}</p>
+                    <hr>
+                </div>
+
+                <!-- Formação -->
+                <h3>Formação</h3>
+                <div class="education-entry">
+                    <p><strong>Instituição:</strong> {{formacao.universidade}}</p>
+                    <p><strong>Curso:</strong> {{formacao.cursoGraduacao}}</p>
+                    <p><strong>Data de Início:</strong> {{formacao.dataInicio}}</p>
+                    <p><strong>Data de Formação:</strong> {{formacao.dataTermino}}</p>
+                    <hr>
+                </div>
+
+                <!-- Área -->
+                <h3>Área de Interesse</h3>
+                <div class="language-entry">
+                    <p><strong> {{curriculo.area}} </strong></p>
+                    <hr>
+                </div>
+                
+                <!-- Idiomas -->
+                <h3>Idiomas</h3>
+                <div class="language-entry">
+                    <p><strong>Língua:</strong> {{curriculo.idioma}}</p>
+                    <hr>
+                </div>
+            </section>
+        </main>
+    </form>
+
+    <footer>
+        <p>&copy; 2024 JobInJob. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #E5E5E5;
+    }
+
+    nav {
+        background-color: #1C3659;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        flex-wrap: wrap;
+        width: 100%;
+        top: 0; 
+    }
+
+    .nav-item {
+        display: flex; 
+        align-items: center; 
+    }
+
+    .nav-item a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        transition: color 0.3s;
+    }
+
+    .nav-item a:hover {
+        color: #8998ac;
+    }
+
+    .brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    main {
+        padding: 2rem;
+    }
+
+    section {
+        margin-bottom: 2rem;
+        color: #ffffff;
+    }
+
+    label{
+        color: #E5E5E5;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+        color: #1C3659;
+    }
+
+    p{
+        color: #fff;
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+        background-color: #1C3659;
+        border-top: 1px solid #ddd;
+    }
+
+    footer p {
+        margin: 5px 0;
+        color: white;
+    }
+
+    h3{
+        font-size: x-large;
+        color: #e5e5e5;
+    }
+
+    hr {
+        border: none; 
+        border-top: 2px solid #3179d6; 
+        margin: 20px 0;
+    }
+
+    #inicio{
+        color: #1C3659;
+        font-weight: bold;
+        
+    }
+
+    .form-container {
+        background-color: #1C3659;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 600px;
+        margin: 20px auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h2 {
+        color: #E5E5E5;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+
+    main {
+        margin: 20px;
+    }
+
+    #botaotabs{
+        font-size: 28px;
+        font-weight: bold;
+        color: #E5E5E5;
+        margin-left: 20px;
+    }
+
+    #navbar-brand{
+        font-weight: bold;
+    }
+
+</style>
+
+</html>

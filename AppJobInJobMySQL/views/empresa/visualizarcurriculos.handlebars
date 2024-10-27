@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibir Currículos</title>
+</head>
+
+
+
+<body>
+    <nav>
+        <div class="nav-item brand">Job In Job</div>
+        <div class="nav-item">
+            <!-- O Início é pra retornar nessa página, Currículos é para mostrar a página de visulização de currículos -->
+            <a href="/empresa/perfilempresa">Início</a>
+            <a href="/empresa/visualizarcurriculos">Currículos</a>
+            <a href="/empresa/logout">Desconectar</a>
+        </div>
+    </nav>
+
+<main>
+
+    <form action="/empresa/visualizarcurriculos" method="GET">
+        <h2 id="curriculostitle">Currículos</h2>
+        <section id="curriculos-container" class="curriculos-container">
+            {{#each curriculos}}
+                <div class="curriculo" data-area="{{area}}" >
+                    <h3 id="exibirNome">{{nome}}</h3>
+                    <p id="dadosCurriculo">Data de Nascimento: {{dataNascimento}} </p>
+                    <p id="dadosCurriculo">Telefone: {{telefone}}</p>
+                    <p id="dadosCurriculo">Cidade: {{cidade}}</p>
+                    <p id="dadosCurriculo">Estado: {{estado}}</p>
+                    <p id="dadosCurriculo">Área de Interesse: {{area}}</p>
+                    <a href="curriculo/{{curriculoId}}"> 
+                        <button type="button" id="botaovisulizar">Ver Currículo</button>
+                    </a>
+                </div>
+            {{/each}}
+        </section>
+    </form>
+    
+</main>
+
+    <footer>
+        <p>&copy; 2024 JobInJob. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #E5E5E5;
+    }
+    
+    nav {
+        background-color: #1C3659;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        flex-wrap: wrap;
+        width: 100%;
+        top: 0; 
+    }
+
+    .nav-item {
+        display: flex; 
+        align-items: center; 
+    }
+
+    .nav-item a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        transition: color 0.3s;
+    }
+
+    .nav-item a:hover {
+        color: #8998ac;
+    }
+
+    .brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    main {
+        padding: 2rem;
+    }
+    
+    section {
+        margin-bottom: 2rem;
+        color: #ffffff;
+    }
+    
+    label{
+        color: #E5E5E5;
+    }
+    
+    h2 {
+        margin-bottom: 1rem;
+        color: #1C3659;
+    }
+    
+    p{
+        color: #fff;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+        background-color: #1C3659;
+        border-top: 1px solid #ddd;
+    }
+
+    footer p {
+        margin: 5px 0;
+        color: white;
+    }
+    
+    h3{
+        font-size: x-large;
+        color: #e5e5e5;
+    }
+    
+    hr {
+        border: none; 
+        border-top: 2px solid #3179d6; 
+        margin: 20px 0;
+    }
+    
+    #inicio{
+        color: #1C3659;
+        font-weight: bold;
+        
+    }
+    
+    .form-container {
+        background-color: #1C3659;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 600px;
+        margin: 20px auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-container h2 {
+        color: #E5E5E5;
+    }
+    
+    .form-container label {
+        display: block;
+        margin: 10px 0 5px;
+        font-weight: bold;
+    }
+    
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container input[type="tel"],
+    .form-container input[type="date"],
+    .form-container select,
+    .form-container textarea {
+        background-color: #e5e5e5;
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    
+    .form-container input[type="submit"] {
+        display: block;
+        margin: 20px auto;
+        background-color: #FFf;
+        color: #1C3659;
+        border: none;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
+    }
+    
+    
+    .form-container input[type="submit"]:hover {
+        background-color: #555;
+    
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    
+    
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    nav ul li {
+        display: inline;
+        margin-right: 10px;
+    }
+    
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    main {
+        margin: 20px;
+    }
+    
+    h2 {
+        color: #333;
+    }
+    
+    .curriculos-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .curriculo {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .curriculo h3 {
+        margin: 0 0 10px;
+        font-size: 20px;
+    }
+    
+    .curriculo p {
+        margin: 5px 0;
+        color: #666;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+        background-color: #1C3659;
+        border-top: 1px solid #ddd;
+    }
+
+    footer p {
+        margin: 5px 0;
+        color: white;
+    }
+    
+    #inicio {
+        margin-left: 20px;
+    }
+    #nomeec{
+        color: #1C3659;
+    }
+    #curriculostitle{
+        font-weight: bold;
+        color: #1C3659; 
+        font-size: 32px;
+        
+    }
+    
+    #iniciomargin{
+        margin-left: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #E5E5E5;
+    }
+    
+    #selecatego{
+        color: #1C3659;
+        font-weight: bold;
+        font-size: 24px;
+    
+    }
+    
+    #categoria{
+        background-color: #1C3659;
+        border-radius: 4px;
+        color: #E5E5E5;
+        font-size: 20px;
+        font-weight: medium;
+        margin-bottom: 24px;
+        width: 210px;
+        height: 36px;
+        margin-left: 12px;
+    }
+    
+    #exibirNome{
+        color: #1C3659;
+        font-weight: bold;
+        font-size: 24px;
+    }
+    
+    #botaovisulizar{
+        background-color: #1C3659;
+        border-radius: 4px;
+        color: #E5E5E5;
+        font-size: 18px;
+        font-weight: medium;
+        margin-top: 12px;
+        width: 200px;
+        height: 36px;
+    }
+    
+    #dadosCurriculo{
+        font-weight: medium;
+        font-size: 18px;
+    }
+    
+    #botaotabs{
+        font-size: 28px;
+        font-weight: bold;
+        color: #E5E5E5;
+        margin-left: 20px;
+    }
+    
+    #labelArea{
+        color: #1C3659;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    #meucurriculodesc{
+        color: #1C3659;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+    #botao-favoritar{
+        background-color: #1C3659;
+        border-radius: 4px;
+        color: #E5E5E5;
+        font-size: 18px;
+        font-weight: medium;
+        margin-top: 12px;
+        width: 200px;
+        height: 36px;
+    }
+    
+    #paginaInicio{
+        font-size: 36px;
+        color: #1C3659;
+    }
+    
+    #inicioJob{
+        margin-left: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff; 
+    }
+    
+#area{
+    background-color: #1C3659;
+        border-radius: 4px;
+        color: #E5E5E5;
+        font-size: 20px;
+        font-weight: medium;
+        margin-bottom: 24px;
+        width: 210px;
+        height: 28px;
+        margin-top: 12px;
+}
+
+</style>
+
+<script>
+
+        function favoritarCurriculo(button) {
+            button.classList.toggle('favoritado');
+            if (button.classList.contains('favoritado')) {
+                button.textContent = 'Desfavoritar';
+            } else {
+                button.textContent = 'Favoritar';
+            }
+        }
+
+        function atualizarDropdownArea() {
+            const categoria = document.getElementById('categoria').value;
+            const areaDropdown = document.getElementById('area');
+            const labelArea = document.getElementById('labelArea');
+
+            if (categoria === 'area') {
+                areaDropdown.style.display = 'block';
+                labelArea.style.display = 'block';
+            } else {
+                areaDropdown.style.display = 'none';
+                labelArea.style.display = 'none';
+                filtrarCurriculos(); // Atualizar os currículos
+            }
+        }
+
+        function favoritarCurriculo(button) {
+            button.classList.toggle('favoritado');
+            if (button.classList.contains('favoritado')) {
+                button.textContent = 'Desfavoritar';
+            } else {
+                button.textContent = 'Favoritar';
+            }
+        }
+
+        function filtrarCurriculos() {
+            const categoria = document.getElementById('categoria').value;
+            const curriculos = document.querySelectorAll('.curriculo');
+            const areaSelecionada = document.getElementById('area').value;
+
+            curriculos.forEach(curriculo => {
+                const area = curriculo.getAttribute('data-area');
+                const idade = parseInt(curriculo.getAttribute('data-idade'));
+                const favoritado = curriculo.querySelector('.botao-favoritar').classList.contains('favoritado');
+
+                // Exibir todos os currículos na categoria geral
+                if (categoria === 'geral') {
+                    curriculo.style.display = 'block';
+                }
+                // Filtrar currículos por área
+                else if (categoria === 'area') {
+                    if (areaSelecionada === 'todas' || area === areaSelecionada) {
+                        curriculo.style.display = 'block';
+                    } else {
+                        curriculo.style.display = 'none';
+                    }
+                }
+                // Filtrar currículos para menor aprendiz (menores de 18 anos)
+                else if (categoria === 'menor-aprendiz') {
+                    if (idade < 18) {
+                        curriculo.style.display = 'block';
+                    } else {
+                        curriculo.style.display = 'none';
+                    }
+                }
+                // Filtrar currículos favoritados
+                else if (categoria === 'favoritos') {
+                    if (favoritado) {
+                        curriculo.style.display = 'block';
+                    } else {
+                        curriculo.style.display = 'none';
+                    }
+                }
+            });
+        }
+</script>
+    
+</html>
