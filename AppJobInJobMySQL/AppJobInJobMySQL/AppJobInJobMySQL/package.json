@@ -1,0 +1,30 @@
+{
+  "name": "appjobinjob",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "app": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "appjobinjob": "file:",
+    "axios": "^1.7.7",
+    "body-parser": "^1.20.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.21.0",
+    "express-handlebars": "^8.0.1",
+    "express-session": "^1.18.1",
+    "method-override": "^3.0.0",
+    "mysql2": "^3.11.3",
+    "sequelize": "^6.37.4",
+    "sequelize-cli": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

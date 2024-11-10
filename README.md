@@ -36,6 +36,19 @@ O Projeto será desenvolvido pela seguinte equipe:<br>
 [![Assista ao vídeo](https://img.youtube.com/vi/icDpus1tlmA/maxresdefault.jpg)](https://youtu.be/icDpus1tlmA)
 
 ### Clique na imagem acima para assistir.
+<br>
+
+
+ ### Segue o link da aplicação desenvolvida durante todo o projeto:
+
+ ### [Link para a aplicação Job In Job](http://168.138.132.44:8081)
+ <br>
+
+ ### Ficamos agradecidos pela atenção e ficamos disponíveis para sanar quaisquer dúvidas. 
+ 
+ ## Até a próxima!
+
+
 
 
 
