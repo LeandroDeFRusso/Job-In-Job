@@ -1,12 +1,13 @@
 import express from 'express';
-import { addVisitor, getVisitorCount, showInicio } from "../controllers/VisitorController.js";
+import visitController from '../controllers/VisitController.js';
 
 const router = express.Router();
 
-router.post('/add-visitor', addVisitor);
-router.get('/visitor-count', getVisitorCount);
+export const showInicio = (req, res) => {
+    res.render('index'); 
+};
 
-router.get('/', showInicio);
+router.get('/', visitController.incrementAndShowVisitCount);
 
 router.get('/candidato/login', (req, res) => {
     res.render('candidato/logincandidato');

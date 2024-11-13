@@ -11,6 +11,7 @@ import candidato from './routes/candidato.js';
 import empresa from './routes/empresa.js';
 import index from './routes/index.js';
 
+
 const app = express();
 
 app.use(methodOverride('_method'));

@@ -13,7 +13,7 @@
    <nav aria-label="Contador de Visitantes">
         <div class="nav-item" role="navigation">
             <img src="/img/contador.png" alt="Ícone de contador de visitantes" class="contador-img">
-            <div id="visitor-counter" class="visitor-counter"><span>Carregando...</span></div>
+            <div id="visitor-counter" class="visitor-counter"><span> : {{visitCount}}</span></div>
         </div>
     </nav>
 
@@ -224,28 +224,5 @@
 </style>
 
 <script>
-    async function fetchVisitorCount() {
-        try {
-            const response = await fetch("/visitor-count");
-            const data = await response.json();
-            document.getElementById("visitor-counter").textContent = `: ${data.count}`;
-        } catch (error) {
-            console.error("Erro ao buscar contador de visitantes:", error);
-            document.getElementById("visitor-counter").textContent = "Erro ao carregar.";
-        }
-    }
-
-    fetchVisitorCount();
-
-    async function addVisitor() {
-        try {
-            const response = await axios.post('/add-visitor');
-            console.log(response.data.message);
-        } catch (error) {
-            console.error("Erro ao registrar visitante:", error);
-        }
-    }
-
-    window.onload = addVisitor;
 
 </script>
