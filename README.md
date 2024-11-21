@@ -53,16 +53,6 @@ O Projeto será desenvolvido pela seguinte equipe:<br>
 <br>
 
 
- ### Segue o link da aplicação desenvolvida durante todo o projeto:
-
- ### [Link para a aplicação Job In Job](http://168.138.132.44:8081)
- <br>
-
- ### Ficamos agradecidos pela atenção e ficamos disponíveis para sanar quaisquer dúvidas. 
- 
- ## Até a próxima!
-
-
 
 
 
